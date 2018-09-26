@@ -1,18 +1,18 @@
 # 目录
 
-* 第0章 WebAssembly简介
+* [第0章 WebAssembly简介](ch0-intro/readme.md)
 
-* 第1章 Emscripten快速入门
+* [第1章 Emscripten快速入门](ch1-quick-guide/readme.md)
   * [1.1 安装Emscripten](ch1-quick-guide/ch1-01-install.md)
   * [1.2 你好，世界！](ch1-quick-guide/ch1-02-helloworld.md)
   * [1.3 胶水代码初探](ch1-quick-guide/ch1-03-glue-code.md)
   * [1.4 编译目标及编译流程](ch1-quick-guide/ch1-04-compile.md)
 
-* 第2章 C与JavaScript互操作
+* [第2章 C与JavaScript互操作](ch2-c-js/readme.md)
   * [2.1 JavaScript调用C函数](ch2-c-js/ch2-01-js-call-c.md)
   * [2.2 JavaScript函数注入C](ch2-c-js/ch2-02-implement-c-api-in-js.md)
   * [2.3 单向透明的内存模型](ch2-c-js/ch2-03-mem-model.md)
-  * [2.4 JavaScript与C交换数据]
+  * 2.4 JavaScript与C交换数据
   * 2.5 EM_ASM宏
   * 2.6 emscripten_run_script函数
 
@@ -31,7 +31,7 @@
   * 4.5 使用C接口注入JavaScript对象
   * 4.6 小心int64
   * 4.7 忘掉文件系统
-  
+
 * 第5章 网络IO
   * 5.1 websocket
   * 5.2 ajax

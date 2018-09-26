@@ -14,7 +14,10 @@ WebAssembly是新一代的Web虚拟机标准，C/C++程序可以通过Emscripten
 
 ## 在线阅读
 
+- https://chai2010.gitbooks.io/cppwasm-book/content/
 - [SUMMARY.md](SUMMARY.md)
+
+----
 
 ## 当前进度
 
@@ -49,7 +52,7 @@ WebAssembly是新一代的Web虚拟机标准，C/C++程序可以通过Emscripten
   * [ ] 4.5 使用C接口注入JavaScript对象
   * [ ] 4.6 小心int64
   * [ ] 4.7 忘掉文件系统
-  
+
 * 第5章 网络IO
   * [ ] 5.1 websocket
   * [ ] 5.2 ajax
@@ -70,6 +73,8 @@ WebAssembly是新一代的Web虚拟机标准，C/C++程序可以通过Emscripten
 * 第8章 工程管理
   * [ ] 8.1 使用Makefile
   * [ ] 8.2 静态库
+
+----
 
 ## 版权声明
 
