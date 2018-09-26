@@ -10,12 +10,21 @@ WebAssembly是新一代的Web虚拟机标准，C/C++程序可以通过Emscripten
 
 ![](cover.png)
 
-作者：丁尔男 柴树杉
+
+- 作者：丁尔男，Github [@3dgen](https://github.com/3dgen)
+- 作者：柴树杉，Github [@chai2010](https://github.com/chai2010)，Twitter [@chaishushan](https://twitter.com/chaishushan)
+- 网址：https://github.com/3dgen/cppwasm-book
 
 ## 在线阅读
 
 - https://chai2010.gitbooks.io/cppwasm-book/content/
 - [SUMMARY.md](SUMMARY.md)
+
+
+## 关注微信公众号 (wasm-hackers) 或 QQ群 (726475047)
+
+![](weixin-wasm-hackers.jpg)
+
 
 ----
 
