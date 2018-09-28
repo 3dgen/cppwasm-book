@@ -1,0 +1,21 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Emscripten:Export1</title>
+  </head>
+  <body>
+    <script>
+    Module = {};
+    Module.onRuntimeInitialized = function() {
+      console.log(Module._show_me_the_answer());
+      console.log(Module._add(12, 1.0));
+      //console.log(Module._show_me_the_answer(10));
+      //console.log(Module._add(2, 3, 4));
+      //console.log(Module._add(12));
+    }
+    </script>
+    <script src="export1.js"></script>
+  </body>
+</html>
