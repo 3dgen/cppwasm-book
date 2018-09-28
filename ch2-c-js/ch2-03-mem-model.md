@@ -1,10 +1,12 @@
 # 2.3 单向透明的内存模型
 
-C/C++程序经Emscripten编译后，运行在JavaScript或WebAssembly虚拟机上，因此C/C++的内存对JavaScript可见，但是C/C++代码无法直接访问JavaScript中的数据。
-
 ## 2.3.1 Module.buffer
 
-无论编译目标是asm.js还是wasm，在Emscripten环境下，C/C++代码眼中的内存实际上都是一个ArrayBuffer对象：`Module.buffer`（ArrayBuffer是JavaScript中用于保存二进制数据块的对象，它是一个一维数组，与C/C++的内存概念天然相似），JavaScript可以通过该对象读写C/C++环境的内存。
+无论编译目标是asm.js还是wasm，C/C++代码眼中的内存空间实际上对应的都是Emscripten提供的ArrayBuffer对象：`Module.buffer`，C/C++内存地址与`Module.buffer`数组下标一一对应。
+
+> **info** ArrayBuffer是JavaScript中用于保存二进制数据的一维数组。在本书的语境中，“`Module.buffer`”、“C/C++内存”、“Emscripten堆”三者是等价的。
+
+C/C++代码能直接通过地址访问的数据全部在内存中（包括运行时堆、运行时栈），而内存对应`Module.buffer`对象，C/C++代码能直接访问的数据事实上被限制在`Module.buffer`内部，JavaScript环境中的其他对象无法被C/C++直接访问——因此我们称其为单向透明的内存模型。
 
 在当前版本的Emscripten中，指针（既地址）类型为int32，因此单一模块的最大可用内存范围为`2GB-1`。未定义的情况下，内存默认容量为16MB，其中栈容量为5MB。
 
@@ -22,7 +24,7 @@ i32[2] = 3333333;
 
 > **tips** ArrayBuffer与TypedArray的关系可以简单理解为：ArrayBuffer是实际存储数据的容器，在其上创建的TypedArray则是把该容器当作某种类型的数组来使用。
 
-Emscripten已经为`Module.buffer`（既C环境的内存）创建了常用类型的TypedArray，见下表：
+Emscripten已经为`Module.buffer`创建了常用类型的TypedArray，见下表：
 
 对象 | TypedArray | 对应C数据类型
 ---- | ------- | -------
@@ -91,4 +93,6 @@ C{g_double:123456.789000}
 
 由此可见，在JavaScript中正确读取了C的内存数据；JavaScript中写入的数据，在C中亦能正确获取。
 
-> **info** 通过本节的例子可见，在JavaScript中通过各种类型的`HEAP`访问C的数据时，地址必须对齐，既：int32/uint32/float型变量地址必须4字节对齐、double型变量地址必须8字节对齐，其他类型以此类推。关于地址对齐的问题，将在4.2节详细讨论。
+> **info** 通过上述例子可知，在JavaScript中通过各种类型的`HEAP`访问C/C++的内存数据时，地址必须对齐，既：int32/uint32/float型变量地址必须4字节对齐、double型变量地址必须8字节对齐，其他类型类似。关于地址对齐的问题，将在4.2节详细讨论。
+
+本书的后续章节中，在不会引起歧义的情况下，我们将使用“内存”指代“Emscripten为C/C++提供的运行时内存”，以简化描述。

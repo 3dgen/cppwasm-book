@@ -12,7 +12,7 @@
   * [2.1 JavaScript调用C函数](ch2-c-js/ch2-01-js-call-c.md)
   * [2.2 JavaScript函数注入C](ch2-c-js/ch2-02-implement-c-api-in-js.md)
   * [2.3 单向透明的内存模型](ch2-c-js/ch2-03-mem-model.md)
-  * 2.4 JavaScript与C交换数据
+  * [2.4 JavaScript与C交换数据](ch2-c-js/ch2-04-data-exchange.md)
   * 2.5 EM_ASM宏
   * 2.6 emscripten_run_script函数
 
