@@ -1,0 +1,22 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Emscripten:Type Convert</title>
+  </head>
+  <body>
+    <script>
+    Module = {};
+    Module.onRuntimeInitialized = function() {
+      Module._print_int(3.4);
+      Module._print_int(4.6);
+      Module._print_int(-3.4);
+      Module._print_int(-4.6);
+      Module._print_float(2000000.03125);
+      Module._print_double(2000000.03125);
+    }
+    </script>
+    <script src="type_conv.js"></script>
+  </body>
+</html>
