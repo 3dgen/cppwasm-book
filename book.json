@@ -1,0 +1,20 @@
+{
+	"gitbook": "3.x",
+	"title": "C++面向wasm编程",
+	"description": "C++面向wasm编程——Emscripten工程实践",
+	"language": "zh-hans",
+
+	"structure": {
+		"readme": "README.md"
+	},
+
+	"pluginsConfig": {
+		"theme-default": {
+			"showLevel": false
+		}
+	},
+
+	"plugins": [
+		"-search"
+	]
+}
