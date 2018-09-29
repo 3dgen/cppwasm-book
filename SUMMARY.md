@@ -14,7 +14,7 @@
   * [2.3 单向透明的内存模型](ch2-c-js/ch2-03-mem-model.md)
   * [2.4 JavaScript与C交换数据](ch2-c-js/ch2-04-data-exchange.md)
   * [2.5 EM_ASM系列宏](ch2-c-js/ch2-05-em-asm.md)
-  * 2.6 emscripten_run_script函数
+  * [2.6 emscripten_run_script系列函数](ch2-c-js/ch2-06-run-script.md)
 
 * 第3章 Emscripten运行时
   * 3.1 main函数与生命周期
