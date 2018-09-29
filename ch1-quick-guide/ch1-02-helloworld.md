@@ -7,7 +7,7 @@
 新建一个名为`hello.cc`的C源文件，为了正确标识中文字符串，将其保存为UTF8编码：
 
 ```c
-//hello.c
+//hello.cc
 #include <stdio.h>
 
 int main() {
