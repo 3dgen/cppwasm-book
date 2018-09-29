@@ -16,39 +16,39 @@
   * [2.5 EM_ASM系列宏](ch2-c-js/ch2-05-em-asm.md)
   * [2.6 emscripten_run_script系列函数](ch2-c-js/ch2-06-run-script.md)
 
-* 第3章 Emscripten运行时
-  * 3.1 main函数与生命周期
-  * 3.2 消息循环
-  * 3.3 文件系统
-  * 3.4 内存管理
-  * 3.5 Module定制
+* 第3章 Emscripten运行时(TODO)
+  * 3.1 main函数与生命周期(TODO)
+  * 3.2 消息循环(TODO)
+  * 3.3 文件系统(TODO)
+  * 3.4 内存管理(TODO)
+  * 3.5 Module定制(TODO)
 
-* 第4章 WebAssembly友好的一般性方法
-  * 4.1 消息循环分离
-  * 4.2 数据对齐
-  * 4.3 使用C接口导出C++对象
-  * 4.4 C++对象生命周期控制
-  * 4.5 使用C接口注入JavaScript对象
-  * 4.6 小心int64
-  * 4.7 忘掉文件系统
+* 第4章 WebAssembly友好的一般性方法(TODO)
+  * 4.1 消息循环分离(TODO)
+  * 4.2 数据对齐(TODO)
+  * 4.3 使用C接口导出C++对象(TODO)
+  * 4.4 C++对象生命周期控制(TODO)
+  * 4.5 使用C接口注入JavaScript对象(TODO)
+  * 4.6 小心int64(TODO)
+  * 4.7 忘掉文件系统(TODO)
 
-* 第5章 网络IO
-  * 5.1 websocket
-  * 5.2 ajax
-  * 5.3 fetch
-  * 5.4 一个通用的网络IO小框架
+* 第5章 网络IO(TODO)
+  * 5.1 websocket(TODO)
+  * 5.2 ajax(TODO)
+  * 5.3 fetch(TODO)
+  * 5.4 一个通用的网络IO小框架(TODO)
 
-* 第6章 多线程
-  * 6.1 JavaScript中的多线模型
-  * 6.2 一个例子
-  * 6.3 一个通用的多线程小框架
+* 第6章 多线程(TODO)
+  * 6.1 JavaScript中的多线模型(TODO)
+  * 6.2 一个例子(TODO)
+  * 6.3 一个通用的多线程小框架(TODO)
 
-* 第7章 GUI及交互
-  * 7.1 canvas
-  * 7.2 鼠标事件
-  * 7.3 键盘事件
-  * 7.4 触屏事件
+* 第7章 GUI及交互(TODO)
+  * 7.1 canvas(TODO)
+  * 7.2 鼠标事件(TODO)
+  * 7.3 键盘事件(TODO)
+  * 7.4 触屏事件(TODO)
 
-* 第8章 工程管理
-  * 8.1 使用Makefile
-  * 8.2 静态库
+* 第8章 工程管理(TODO)
+  * 8.1 使用Makefile(TODO)
+  * 8.2 静态库(TODO)
