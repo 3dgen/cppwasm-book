@@ -1,4 +1,4 @@
-# C++面向wasm编程——Emscripten工程实践
+# C/C++面向wasm编程——Emscripten工程实践
 
 > *Ending's law: "Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually."*
 
