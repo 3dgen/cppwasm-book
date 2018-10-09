@@ -47,6 +47,8 @@ WebAssembly是新一代的Web虚拟机标准，C/C++程序可以通过Emscripten
   * [x] [2.4 JavaScript与C交换数据](ch2-c-js/ch2-04-data-exchange.md)
   * [x] [2.5 EM_ASM系列宏](ch2-c-js/ch2-05-em-asm.md)
   * [x] [2.6 emscripten_run_script系列函数](ch2-c-js/ch2-06-run-script.md)
+  * [x] [2.7 ccall/cwrap](ch2-c-js/ch2-07-ccall-cwrap.md)
+  * [x] [2.8 补充说明](ch2-c-js/ch2-08-ext.md)
 
 * 第3章 Emscripten运行时
   * [ ] 3.1 main函数与生命周期

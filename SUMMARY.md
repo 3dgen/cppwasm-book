@@ -15,6 +15,8 @@
   * [2.4 JavaScript与C交换数据](ch2-c-js/ch2-04-data-exchange.md)
   * [2.5 EM_ASM系列宏](ch2-c-js/ch2-05-em-asm.md)
   * [2.6 emscripten_run_script系列函数](ch2-c-js/ch2-06-run-script.md)
+  * [2.7 ccall/cwrap](ch2-c-js/ch2-07-ccall-cwrap.md)
+  * [2.8 补充说明](ch2-c-js/ch2-08-ext.md)
 
 * 第3章 Emscripten运行时(TODO)
   * 3.1 main函数与生命周期(TODO)
