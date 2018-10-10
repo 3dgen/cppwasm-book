@@ -13,14 +13,14 @@
 
 语法：
 
-`var result = Module.ccall(funcName, resultType, paramTypeList, paramList);`
+`var result = Module.ccall(ident, returnType, argTypes, args);`
 
 参数：
 
-- funcName ：C导出函数的函数名（不含“_”下划线前缀）；
-- resultType ：C导出函数的返回值类型，可以为`'number'`、`'string'`、`'null'`，分别表示函数返回值为数值、字符串、无返回值；
-- paramTypeList ：C导出函数的参数类型的数组。参数类型可以为`'number'`、`'string'`、`'array'`，分别代表数值、字符串、数组；
-- paramList ：参数数组。
+- ident ：C导出函数的函数名（不含“_”下划线前缀）；
+- returnType ：C导出函数的返回值类型，可以为`'boolean'`、`'number'`、`'string'`、`'null'`，分别表示函数返回值为布尔值、数值、字符串、无返回值；
+- argTypes ：C导出函数的参数类型的数组。参数类型可以为`'number'`、`'string'`、`'array'`，分别代表数值、字符串、数组；
+- args ：参数数组。
 
 例如C导出函数如下：
 
@@ -120,12 +120,12 @@ EM_PORT_API(const char*) get_string() {
 
 `ccall`虽然封装了字符串等数据类型，但调用时仍然需要填入参数类型数组、参数列表等，为此`cwrap`进行了进一步封装：
 
-`var func = Module.cwrap(funcName, resultType, paramTypeList);`
+`var func = Module.cwrap(ident, returnType, argTypes);`
 
 参数：
-- funcName ：C导出函数的函数名（不含“_”下划线前缀）；
-- resultType ：C导出函数的返回值类型，可以为`'number'`、`'string'`、`'null'`，分别表示函数返回值为数值、字符串、无返回值；
-- paramTypeList ：C导出函数的参数类型的数组。参数类型可以为`'number'`、`'string'`、`'array'`，分别代表数值、字符串、数组；
+- ident ：C导出函数的函数名（不含“_”下划线前缀）；
+- returnType ：C导出函数的返回值类型，可以为`'boolean'`、`'number'`、`'string'`、`'null'`，分别表示函数返回值为布尔值、数值、字符串、无返回值；
+- argTypes ：C导出函数的参数类型的数组。参数类型可以为`'number'`、`'string'`、`'array'`，分别代表数值、字符串、数组；
 
 返回值：
 - 封装方法
@@ -156,7 +156,15 @@ C导出函数`add()`/`print_string()`/`sum()`/`get_string()`分别被封装为`c
 
 相对于堆来说，栈空间是很稀缺的资源，因此使用`ccall`/`cwrap`时需要格外注意传入的字符串/数组的大小，避免爆栈。
 
-下面列出的是Emscripten为`ccall`/`cwrap`生成的相关胶水代码，有兴趣的读者可以尝试分析。
+下面列出的是Emscripten为`ccall`/`cwrap`生成的相关胶水代码，有兴趣的读者可以尝试分析，其概略流程为：
+
+1. `getCFunc()`，根据ident获取C导出函数；
+1. `stackSave()`，保存栈指针；
+1. `arrayToC()`/`stringToC()`，将array/string参数拷贝到栈空间中；
+1. `func.apply()`，调用C导出函数
+1. `convertReturnValue()`，根据returnType将返回值转为对应类型；
+1. `stackRestore()`，恢复栈指针。
+
 
 ```js
 // Returns the C function with a specified identifier (for C++, you need to do manual name mangling)
