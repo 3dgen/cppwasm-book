@@ -158,7 +158,7 @@ C导出函数`add()`/`print_string()`/`sum()`/`get_string()`分别被封装为`c
 
 下面列出的是Emscripten为`ccall`/`cwrap`生成的相关胶水代码，有兴趣的读者可以尝试分析，其概略流程为：
 
-1. `getCFunc()`，根据ident获取C导出函数；
+1. `getCFunc()`，根据`ident`获取C导出函数；
 1. `stackSave()`，保存栈指针；
 1. `arrayToC()`/`stringToC()`，将array/string参数拷贝到栈空间中；
 1. `func.apply()`，调用C导出函数
