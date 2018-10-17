@@ -34,13 +34,13 @@ WebAssembly是新一代的Web虚拟机标准，C/C++程序可以通过Emscripten
 
 * 第0章 WebAssembly简介
 
-* 第1章 Emscripten快速入门
+* 第1章 [Emscripten快速入门](ch1-quick-guide/readme.md)
   * [x] [1.1 安装Emscripten](ch1-quick-guide/ch1-01-install.md)
   * [x] [1.2 你好，世界！](ch1-quick-guide/ch1-02-helloworld.md)
   * [x] [1.3 胶水代码初探](ch1-quick-guide/ch1-03-glue-code.md)
   * [x] [1.4 编译目标及编译流程](ch1-quick-guide/ch1-04-compile.md)
 
-* 第2章 C与JavaScript互操作
+* 第2章 [C与JavaScript互操作](ch2-c-js/readme.md)
   * [x] [2.1 JavaScript调用C函数](ch2-c-js/ch2-01-js-call-c.md)
   * [x] [2.2 JavaScript函数注入C](ch2-c-js/ch2-02-implement-c-api-in-js.md)
   * [x] [2.3 单向透明的内存模型](ch2-c-js/ch2-03-mem-model.md)
@@ -50,9 +50,9 @@ WebAssembly是新一代的Web虚拟机标准，C/C++程序可以通过Emscripten
   * [x] [2.7 ccall/cwrap](ch2-c-js/ch2-07-ccall-cwrap.md)
   * [x] [2.8 补充说明](ch2-c-js/ch2-08-ext.md)
 
-* 第3章 Emscripten运行时
-  * [ ] 3.1 main函数与生命周期
-  * [ ] 3.2 消息循环
+* 第3章 [Emscripten运行时](ch3-runtime/readme.md)
+  * [x] [3.1 main函数与生命周期](ch3-runtime/ch3-01-main.md)
+  * [x] [3.2 消息循环](ch3-runtime/ch3-02-message-loop.md)
   * [ ] 3.3 文件系统
   * [ ] 3.4 内存管理
   * [ ] 3.5 Module定制

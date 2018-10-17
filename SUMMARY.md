@@ -18,9 +18,9 @@
   * [2.7 ccall/cwrap](ch2-c-js/ch2-07-ccall-cwrap.md)
   * [2.8 补充说明](ch2-c-js/ch2-08-ext.md)
 
-* 第3章 Emscripten运行时(TODO)
-  * 3.1 main函数与生命周期(TODO)
-  * 3.2 消息循环(TODO)
+* [第3章 Emscripten运行时](ch3-runtime/readme.md)
+  * [3.1 main函数与生命周期](ch3-runtime/ch3-01-main.md)
+  * [3.2 消息循环](ch3-runtime/ch3-02-message-loop.md)
   * 3.3 文件系统(TODO)
   * 3.4 内存管理(TODO)
   * 3.5 Module定制(TODO)
