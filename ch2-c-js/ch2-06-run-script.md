@@ -10,11 +10,11 @@
 
 参数：
 
-`script`：包含JavaScript脚本语句的字符串。
+- `script`：包含JavaScript脚本语句的字符串。
 
 返回值：
 
-无
+- 无
 
 函数使用很简单，例如：
 
@@ -68,9 +68,10 @@ emcc emscripten_run_script.cc -std=c++11  -o emscripten_run_script.js
 
 参数：
 
-`script`：包含JavaScript脚本语句的字符串。
+- `script`：包含JavaScript脚本语句的字符串。
 
-返回值：int
+返回值：
+- int
 
 该函数`与emscripten_run_script()`类似，区别是它会将输入的脚本的执行结果作为整型数返回，例如：
 
@@ -98,9 +99,10 @@ num:13
 
 参数：
 
-`script`：包含JavaScript脚本语句的字符串。
+- `script`：包含JavaScript脚本语句的字符串。
 
-返回值：char *
+返回值：
+- char *
 
 该函数`emscripten_run_script_int()`类似，区别是返回值为字符串，例如：
 
