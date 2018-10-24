@@ -1,0 +1,1 @@
+python <emsdk>/<sdk_ver>/tools/file_packager.py fp.data --preload dat_dir --js-output=fp.js
