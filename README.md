@@ -54,7 +54,7 @@ WebAssembly是新一代的Web虚拟机标准，C/C++程序可以通过Emscripten
   * [x] [3.1 main函数与生命周期](ch3-runtime/ch3-01-main.md)
   * [x] [3.2 消息循环](ch3-runtime/ch3-02-message-loop.md)
   * [x] [3.3 文件系统](ch3-runtime/ch3-03-fs.md)
-  * [ ] 3.4 内存管理
+  * [x] [3.4 内存管理](ch3-runtime/ch3-04-mem.md)
   * [ ] 3.5 Module定制
 
 * 第4章 WebAssembly友好的一般性方法
