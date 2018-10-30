@@ -26,8 +26,8 @@
   * [3.5 Module定制及其他](ch3-runtime/ch3-05-module.md)
   * [3.6 小结](ch3-runtime/ch3-06-summary.md)
 
-* 第4章 WebAssembly友好的一般性方法(TODO)
-  * 4.1 消息循环分离(TODO)
+* [第4章 WebAssembly友好的一般性方法](ch4-techniques/readme.md)
+  * [4.1 消息循环分离](ch4-techniques/ch4-01-msg-loop-detach.md)
   * 4.2 数据对齐(TODO)
   * 4.3 使用C接口导出C++对象(TODO)
   * 4.4 C++对象生命周期控制(TODO)
