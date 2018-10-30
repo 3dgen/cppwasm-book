@@ -1,0 +1,17 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Emscripten:pre-hello-post</title>
+  </head>
+  <body>
+	<script>
+	Module = {};
+	Module.print = function(e) {
+		alert(e);
+	}
+	</script>
+    <script src="pre_hello_post.js"></script>
+  </body>
+</html>
