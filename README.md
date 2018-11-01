@@ -1,6 +1,6 @@
 # C/C++面向WebAssembly编程
 
-本书介绍了在工程化应用中使用C/C++进行WebAssembly化开发的方法。关于WebAssembly的基础知识可以参考《WebAssembly标准入门》。
+本书介绍了在工程化应用中使用C/C++进行WebAssembly开发的方法。关于WebAssembly的基础知识可以参考《WebAssembly标准入门》。
 
 ![](cover.png)
 
@@ -65,7 +65,7 @@ WebAssembly是新一代的Web虚拟机标准，C/C++程序可以通过Emscripten
   * [x] [3.5 Module定制及其他](ch3-runtime/ch3-05-module.md)
   * [x] [3.6 小结](ch3-runtime/ch3-06-summary.md)
 
-* [第4章 WebAssembly友好的一般性方法](ch4-techniques/readme.md)
+* 第4章 [WebAssembly友好的一般性方法](ch4-techniques/readme.md)
   * [x] [4.1 消息循环分离](ch4-techniques/ch4-01-msg-loop-detach.md)
   * [x] [4.2 内存对齐](ch4-techniques/ch4-02-align.md)
   * [ ] 4.3 使用C接口导出C++对象
