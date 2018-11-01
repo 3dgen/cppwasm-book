@@ -1,4 +1,14 @@
-# C/C++面向wasm编程——Emscripten工程实践
+# C/C++面向wasm编程
+
+本书介绍了在工程化应用中使用C/C++进行WebAssembly化开发的方法。
+
+![](cover.png)
+
+- 作者：丁尔男，Github [@3dgen](https://github.com/3dgen)
+- 作者：柴树杉，Github [@chai2010](https://github.com/chai2010)，Twitter [@chaishushan](https://twitter.com/chaishushan)
+- 项目地址：https://github.com/3dgen/cppwasm-book
+
+## 前言
 
 > *Ending's law: "Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually."*
 
@@ -10,18 +20,15 @@ WebAssembly是新一代的Web虚拟机标准，C/C++程序可以通过Emscripten
 
 但WebAssembly的运行环境毕竟与本地环境有着巨大的差异，因此为了达到上述理想目标，从整体框架到接口设计甚至到函数间的数据交换层面都必须充分考虑Web环境的特点（或者说限制），而这正是本书所贯彻的“WebAssembly友好”的内涵所在。
 
-![](cover.png)
-
-
-- 作者：丁尔男，Github [@3dgen](https://github.com/3dgen)
-- 作者：柴树杉，Github [@chai2010](https://github.com/chai2010)，Twitter [@chaishushan](https://twitter.com/chaishushan)
-- 项目地址：https://github.com/3dgen/cppwasm-book
-
 ## 在线阅读
 
 - [SUMMARY.md](SUMMARY.md)
 - https://3dgen.cn/cppwasm-book
 
+## 参考资料
+
+- 《WebAssembly标准入门》
+- WebAssembly资料精选：[https://github.com/chai2010/awesome-wasm-zh](https://github.com/chai2010/awesome-wasm-zh)
 
 ## 关注微信公众号 (wasm-hackers) 或 QQ群 (726475047)
 
