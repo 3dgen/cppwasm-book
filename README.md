@@ -1,6 +1,6 @@
 # C/C++面向wasm编程
 
-本书介绍了在工程化应用中使用C/C++进行WebAssembly化开发的方法。
+本书介绍了在工程化应用中使用C/C++进行WebAssembly化开发的方法。关于WebAssembly的基础知识可以参考《WebAssembly标准入门》。
 
 ![](cover.png)
 
