@@ -1,6 +1,6 @@
-*.go go
-*.json json
-*.html html
-*.js js
-*.cc cc
-makefile makefile
+*.go text
+*.json text
+*.html text
+*.js text
+*.cc text
+Makefile text
