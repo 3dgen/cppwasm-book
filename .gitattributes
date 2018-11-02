@@ -1,6 +1,6 @@
-*.go text
-*.json text
-*.html text
-*.js text
-*.cc text
-Makefile text
+*.go linguist-vendored
+*.json linguist-vendored
+*.html linguist-vendored
+*.js linguist-vendored
+*.cc linguist-vendored
+Makefile linguist-vendored
