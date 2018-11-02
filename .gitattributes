@@ -1,2 +1,1 @@
-*.cc linguist-language=WebAssembly
-*.wasm linguist-language=WebAssembly
+*.go linguist-language=WebAssembly
