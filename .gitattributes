@@ -2,5 +2,6 @@
 *.json linguist-vendored
 *.html linguist-vendored
 *.js linguist-vendored
-*.cc linguist-vendored
+*.cc linguist-language=WebAssembly
 Makefile linguist-vendored
+*.wasm linguist-language=WebAssembly
