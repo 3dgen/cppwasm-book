@@ -1,0 +1,24 @@
+<!doctype html>
+
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>Emscripten:export child class</title>
+  </head>
+  <body>
+	<script>
+	Module = {};
+	Module.onRuntimeInitialized = function() {
+		var t = Module._Shape_New_Triangle();
+		Module._Shape_WhatAreYou(t);
+		
+		var c = Module._Shape_New_Circle();
+		Module._Shape_WhatAreYou(c);
+		
+		Module._Shape_Delete(t);
+		Module._Shape_Delete(c);
+	}
+	</script>
+	<script src="exp_child_class.js"></script>
+  </body>
+</html>

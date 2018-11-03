@@ -1,0 +1,19 @@
+<!doctype html>
+
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>Emscripten:export class</title>
+  </head>
+  <body>
+	<script>
+	Module = {};
+	Module.onRuntimeInitialized = function() {
+		var s = Module._Sum_New();
+		console.log(Module._Sum_Inc(s, 29));
+		Module._Sum_Delete(s);
+	}
+	</script>
+	<script src="exp_class.js"></script>
+  </body>
+</html>
