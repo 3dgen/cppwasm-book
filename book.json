@@ -1,7 +1,7 @@
 {
 	"gitbook": "3.x",
-	"title": "C++面向wasm编程",
-	"description": "C++面向wasm编程——Emscripten工程实践",
+	"title": "C/C++面向WebAssembly编程",
+	"description": "C/C++面向WebAssembly编程——Emscripten工程实践",
 	"language": "zh-hans",
 
 	"structure": {
