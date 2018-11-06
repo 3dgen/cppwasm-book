@@ -30,7 +30,7 @@
   * [4.1 消息循环分离](ch4-techniques/ch4-01-msg-loop-detach.md)
   * [4.2 内存对齐](ch4-techniques/ch4-02-align.md)
   * [4.3 使用C接口导出C++对象](ch4-techniques/ch4-03-export-obj.md)
-  * 4.4 C++对象生命周期控制(TODO)
+  * [4.4 C++对象生命周期控制](ch4-techniques/ch4-04-obj-life-cycle.md)
   * 4.5 使用C接口注入JavaScript对象(TODO)
   * 4.6 小心int64(TODO)
   * 4.7 忘掉文件系统(TODO)

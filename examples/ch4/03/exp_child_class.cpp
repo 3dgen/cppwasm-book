@@ -19,8 +19,8 @@
 
 class CShape {
 public:
-	CShape() {};
-	virtual ~CShape() {};
+	CShape() {}
+	virtual ~CShape() {}
 
 	virtual void WhatAreYou() = 0;
 };
