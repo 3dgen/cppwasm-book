@@ -1,0 +1,64 @@
+<!doctype html>
+
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>Emscripten:import object</title>
+  </head>
+  <body>
+  <div id = "container"> </div>
+  <hr/>
+  <button onclick = Push()>Push</button>
+  <button onclick = Pop()>Pop</button>
+	<script>
+	
+	var button_table = {};
+	var button_counter = 0;
+
+	function js_ButtonCreate() {
+		var btn = document.createElement("button");
+		btn.ref_count = 1;
+		btn.button_id = button_counter++;
+		button_table[btn.button_id] = btn;
+	
+		document.getElementById("container").appendChild(btn);
+		return btn.button_id;
+	}
+	
+	function js_ButtonAddRef(button_id) {
+		if (!button_table[button_id]) return;
+		
+		button_table[button_id].ref_count++;
+	}
+	
+	function js_ButtonRelease(button_id) {
+		if (!button_table[button_id]) return -1;
+	
+		var btn = button_table[button_id];
+		btn.ref_count--;
+		var rc = btn.ref_count;
+		if (rc == 0) {
+			document.getElementById("container").removeChild(btn);
+			delete button_table[button_id];
+		}
+		return rc;
+	}
+	
+	function js_ButtonSetInnerHtml(button_id, name) {
+		if (!button_table[button_id]) return;
+		button_table[button_id].innerHTML = name;	
+	}
+
+	
+	function Push(){
+		Module._PushButton();
+	}
+	
+	function Pop(){
+		Module._PopButton();
+	}
+	
+	</script>
+	<script src="imp_obj.js"></script>
+  </body>
+</html>

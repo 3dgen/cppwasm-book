@@ -70,7 +70,7 @@ WebAssembly是新一代的Web虚拟机标准，C/C++程序可以通过Emscripten
   * [x] [4.2 内存对齐](ch4-techniques/ch4-02-align.md)
   * [x] [4.3 使用C接口导出C++对象](ch4-techniques/ch4-03-export-obj.md)
   * [x] [4.4 C++对象生命周期控制](ch4-techniques/ch4-04-obj-life-cycle.md)
-  * [ ] 4.5 使用C接口注入JavaScript对象
+  * [x] [4.5 使用C接口注入JavaScript对象](ch4-techniques/ch4-05-import-js-obj.md)
   * [ ] 4.6 小心int64
   * [ ] 4.7 忘掉文件系统
 
