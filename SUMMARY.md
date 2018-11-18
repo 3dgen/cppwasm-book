@@ -32,7 +32,7 @@
   * [4.3 使用C接口导出C++对象](ch4-techniques/ch4-03-export-obj.md)
   * [4.4 C++对象生命周期控制](ch4-techniques/ch4-04-obj-life-cycle.md)
   * [4.5 使用C接口注入JavaScript对象](ch4-techniques/ch4-05-import-js-obj.md)
-  * 4.6 小心int64(TODO)
+  * [4.6 小心int64](ch4-techniques/ch4-06-int64-issue.md)
   * 4.7 忘掉文件系统(TODO)
 
 * 第5章 网络IO(TODO)
