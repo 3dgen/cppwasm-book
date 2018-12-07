@@ -1,6 +1,8 @@
 # C/C++面向WebAssembly编程
 
-本书介绍了在工程化应用中使用C/C++进行WebAssembly开发的方法。关于WebAssembly的基础知识可以参考《WebAssembly标准入门》。
+本书介绍了在工程化应用中使用C/C++进行WebAssembly开发的方法。关于WebAssembly的基础知识可以参考《WebAssembly标准入门》，预售地址：
+- 异步：[https://www.epubit.com/book/detail/40619](https://www.epubit.com/book/detail/40619)
+- 京东：[https://item.jd.com/12499372.html](https://item.jd.com/12499372.html)
 
 ![](cover.png)
 
@@ -27,7 +29,7 @@ WebAssembly是新一代的Web虚拟机标准，C/C++程序可以通过Emscripten
 
 ## 参考资料
 
-- 《WebAssembly标准入门》
+- [《WebAssembly标准入门》](https://www.epubit.com/book/detail/40619)
 - WebAssembly资料精选：[https://github.com/chai2010/awesome-wasm-zh](https://github.com/chai2010/awesome-wasm-zh)
 
 ## 关注微信公众号 (wasm-hackers) 或 QQ群 (726475047)
@@ -74,8 +76,8 @@ WebAssembly是新一代的Web虚拟机标准，C/C++程序可以通过Emscripten
   * [x] [4.6 小心int64](ch4-techniques/ch4-06-int64-issue.md)
   * [x] [4.7 忘掉文件系统](ch4-techniques/ch4-07-forget-about-fs.md)
 
-* 第5章 网络IO
-  * [ ] 5.1 websocket
+* 第5章 [网络IO](ch5-net/readme.md)
+  * [ ] [5.1 WebSocket](ch5-net/ch5-01-websocket.md)
   * [ ] 5.2 ajax
   * [ ] 5.3 fetch
   * [ ] 5.4 一个通用的网络IO小框架
