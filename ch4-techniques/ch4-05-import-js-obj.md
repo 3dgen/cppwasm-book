@@ -141,7 +141,7 @@ emcc imp_obj.cpp --js-library pkg.js -o imp_obj.js
 
 然后我们在网页中创建两个按钮，并分别在其`onclick`事件中调用`PushButton()`/`PopButton()`：
 
-```js
+```html
   <button onclick = Push()>Push</button>
   <button onclick = Pop()>Pop</button>
 	<script>
