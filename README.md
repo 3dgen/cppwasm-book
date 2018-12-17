@@ -1,7 +1,7 @@
 # Multiple Language Versions
 
-- [English](en/readme.md)
-- [中文](zh/readme.md)
+- [English](en/README.md)
+- [中文](zh/README.md)
 
 # Community
 QQ Group: 726475047
