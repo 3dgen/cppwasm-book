@@ -34,11 +34,6 @@ WebAssembly是新一代的Web虚拟机标准，C/C++程序可以通过Emscripten
 - [《WebAssembly标准入门》](https://www.epubit.com/book/detail/40619)
 - WebAssembly资料精选：[https://github.com/chai2010/awesome-wasm-zh](https://github.com/chai2010/awesome-wasm-zh)
 
-## 关注微信公众号 (wasm-hackers) 或 QQ群 (726475047)
-
-![](weixin-wasm-hackers.jpg)
-
-
 ----
 
 ## 当前进度

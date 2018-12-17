@@ -34,13 +34,6 @@ However, the operating environment of WebAssembly is very different from the nat
 - ["Introduction to the WebAssembly Standard"](https://www.epubit.com/book/detail/40619)
 - [https://github.com/chai2010/awesome-wasm-zh](https://github.com/chai2010/awesome-wasm-zh)
 
-## QQ Group: 726475047
-
-## WebChat Official Accounts: wasm-hackers
-
-![](weixin-wasm-hackers.jpg)
-
-
 ----
 
 ## Progress
