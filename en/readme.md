@@ -7,9 +7,9 @@ This book introduces the use of C/C++ for WebAssembly development. For the basic
 
 ----
 
-![](cover_en.png)
+![](cover.png)
 
-- Author: DingErnan，Github [@3dgen](https://github.com/3dgen)
+- Author: Ending，Github [@3dgen](https://github.com/3dgen)
 - Author: ChaiShushan，Github [@chai2010](https://github.com/chai2010)，Twitter [@chaishushan](https://twitter.com/chaishushan)
 - Project: https://github.com/3dgen/cppwasm-book
 
@@ -27,7 +27,7 @@ However, the operating environment of WebAssembly is very different from the nat
 
 ## Read online
 
-- [SUMMARY_EN.md](SUMMARY_EN.md)
+- [SUMMARY.md](SUMMARY.md)
 
 ## Reference
 
