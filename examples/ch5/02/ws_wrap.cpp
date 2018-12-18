@@ -20,19 +20,20 @@
 #include <time.h>
 
 struct WS_WRAPPER;
-struct WS_CONNECTOR;
+struct WS_CB;
 
 //imp by JavaScript, call by C:
-EM_PORT_API(struct WS_WRAPPER*) WSNew(const char *url, struct WS_CONNECTOR *conn);
+EM_PORT_API(struct WS_WRAPPER*) WSNew(const char *url, struct WS_CB *cb);
 EM_PORT_API(int) WSSend(struct WS_WRAPPER *ws, const char *data);
 EM_PORT_API(void) WSDelete(struct WS_WRAPPER *ws);
 
-class CWSConnector{
+//WebSocket callback:
+class CWSCallback{
 public:
-	CWSConnector(const char *url){
-		m_ws = WSNew(url, (struct WS_CONNECTOR*)this);
+	CWSCallback(const char *url){
+		m_ws = WSNew(url, (struct WS_CB*)this);
 	}
-	virtual ~CWSConnector(){}
+	virtual ~CWSCallback(){}
 	
 	void OnOpen(){
 		printf("OnOpen\n");
@@ -57,30 +58,28 @@ public:
 };
 
 //imp by C, call by JavaScript:
-EM_PORT_API(void) WSOnOpen(struct WS_CONNECTOR *conn){
-	if (conn == NULL) return;
-	CWSConnector *pc = (CWSConnector*)conn;
+EM_PORT_API(void) WSOnOpen(struct WS_CB *cb){
+	if (cb == NULL) return;
+	CWSCallback *pc = (CWSCallback*)cb;
 	pc->OnOpen();
 }
 
-EM_PORT_API(void) WSOnClose(struct WS_CONNECTOR *conn){
-	if (conn == NULL) return;
-	CWSConnector *pc = (CWSConnector*)conn;
+EM_PORT_API(void) WSOnClose(struct WS_CB *cb){
+	if (cb == NULL) return;
+	CWSCallback *pc = (CWSCallback*)cb;
 	pc->OnClose();
 }
 
-EM_PORT_API(void) WSOnMessage(struct WS_CONNECTOR *conn, const char* data){
-	if (conn == NULL) return;
-	CWSConnector *pc = (CWSConnector*)conn;
+EM_PORT_API(void) WSOnMessage(struct WS_CB *cb, const char* data){
+	if (cb == NULL) return;
+	CWSCallback *pc = (CWSCallback*)cb;
 	pc->OnMessage(data);
 }
 
-EM_PORT_API(void) WSOnError(struct WS_CONNECTOR *conn){
-	if (conn == NULL) return;
-	CWSConnector *pc = (CWSConnector*)conn;
+EM_PORT_API(void) WSOnError(struct WS_CB *cb){
+	if (cb == NULL) return;
+	CWSCallback *pc = (CWSCallback*)cb;
 	pc->OnError();
 }
 
-int main(){
-	new CWSConnector("ws://localhost:40001/ws_echo");
-}
+CWSCallback wscb("ws://localhost:40001/ws_echo");

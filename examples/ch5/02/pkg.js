@@ -1,6 +1,6 @@
 mergeInto(LibraryManager.library, {
-    WSNew: function (url, conn) {
-        return JS_WSNew(Pointer_stringify(url), conn);
+    WSNew: function (url, cb) {
+        return JS_WSNew(Pointer_stringify(url), cb);
     },
 
     WSSend: function (ws, data) {

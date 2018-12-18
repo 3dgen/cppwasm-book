@@ -74,8 +74,8 @@ WebAssembly是新一代的Web虚拟机标准，C/C++程序可以通过Emscripten
   * [x] [4.7 忘掉文件系统](ch4-techniques/ch4-07-forget-about-fs.md)
 
 * 第5章 [网络IO](ch5-net/readme.md)
-  * [x] [5.1 WebSocket](ch5-net/ch5-01-websocket.md)
-  * [ ] 5.2 ajax
+  * [x] [5.1 XMLHttpRequest](ch5-net/ch5-01-http.md)
+  * [x] [5.2 WebSocket](ch5-net/ch5-02-websocket.md)
   * [ ] 5.3 fetch
   * [ ] 5.4 一个通用的网络IO小框架
 

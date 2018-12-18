@@ -1,8 +1,8 @@
-# 5.1 WebSocket
+# 5.2 WebSocket
 
 本节将介绍在Emscripten中使用WebSocket的方法。
 
-## 5.1.1 WebSocket简介
+## 5.2.1 WebSocket简介
 
 WebSocket协议在2011年已成为国际标准，目前主流浏览器均已支持。与HTTP协议相比，WebSocket有如下特点：
 
@@ -81,7 +81,7 @@ func webSocketHandler(ws *websocket.Conn) {
 go run ws_echo.go
 ```
 
-## 5.1.2 在JavaScript中使用WebSocket
+## 5.2.2 在JavaScript中使用WebSocket
 
 在JavaScript中使用`WebSocket()`构造函数创建WebSocket对象，`WebSocket.send()`方法用于发送数据，`WebSocket.onmessage()`属性用于指定处理接收到的数据的回调函数，例如：
 
@@ -109,11 +109,11 @@ go run ws_echo.go
 
 上述代码创建了与`ws://localhost:40001/ws_echo`的WebSocket连接，连接成功后发送了"Hello world!"，WebSocket echo服务将收到的数据发回后，`ws.onmessage()`将收到的数据通过日志打印：
 
-![](images/01-ws-js.png)
+![](images/02-ws-js.png)
 
-## 5.1.3 WebSocket对象的C接口封装
+## 5.2.3 WebSocket对象的C接口封装
 
-通过前述介绍可知：与大多数JavaScript异步IO操作类似，WebSocket是通过异步回调的方式处理数据接收、连接状态变更等行为，因此WebSocket对象的C接口封装分为两个部分：
+与5.1节介绍的XMLHttpRequest封装方法类似，WebSocket对象的C接口封装分为两个部分：
 
 1. 由JavaScript实现，供C调用。包括创建WebSocket对象、发送数据等主动行为；
 1. 由C实现，供JavaScript调用。包括各种事件的回调。
@@ -122,25 +122,22 @@ go run ws_echo.go
 
 ```cpp
 //ws_wrap.cpp
+
 struct WS_WRAPPER;
-struct WS_CONNECTOR;
+struct WS_CB;
 
 //imp by JavaScript, call by C:
-EM_PORT_API(struct WS_WRAPPER*) WSNew(const char *url, struct WS_CONNECTOR *conn);
+EM_PORT_API(struct WS_WRAPPER*) WSNew(const char *url, struct WS_CB *cb);
 EM_PORT_API(int) WSSend(struct WS_WRAPPER *ws, const char *data);
 EM_PORT_API(void) WSDelete(struct WS_WRAPPER *ws);
 
-class CWSConnector{
+//WebSocket callback:
+class CWSCallback{
 public:
-	CWSConnector(const char *url){
-		m_ws = WSNew(url, (struct WS_CONNECTOR*)this);
+	CWSCallback(const char *url){
+		m_ws = WSNew(url, (struct WS_CB*)this);
 	}
-	virtual ~CWSConnector(){
-		if (m_ws){
-			WSDelete(m_ws);
-			m_ws = NULL;
-		}
-	}
+	virtual ~CWSCallback(){}
 	
 	void OnOpen(){
 		printf("OnOpen\n");
@@ -165,44 +162,42 @@ public:
 };
 
 //imp by C, call by JavaScript:
-EM_PORT_API(void) WSOnOpen(struct WS_CONNECTOR *conn){
-	if (conn == NULL) return;
-	CWSConnector *pc = (CWSConnector*)conn;
+EM_PORT_API(void) WSOnOpen(struct WS_CB *cb){
+	if (cb == NULL) return;
+	CWSCallback *pc = (CWSCallback*)cb;
 	pc->OnOpen();
 }
 
-EM_PORT_API(void) WSOnClose(struct WS_CONNECTOR *conn){
-	if (conn == NULL) return;
-	CWSConnector *pc = (CWSConnector*)conn;
+EM_PORT_API(void) WSOnClose(struct WS_CB *cb){
+	if (cb == NULL) return;
+	CWSCallback *pc = (CWSCallback*)cb;
 	pc->OnClose();
 }
 
-EM_PORT_API(void) WSOnMessage(struct WS_CONNECTOR *conn, const char* data){
-	if (conn == NULL) return;
-	CWSConnector *pc = (CWSConnector*)conn;
+EM_PORT_API(void) WSOnMessage(struct WS_CB *cb, const char* data){
+	if (cb == NULL) return;
+	CWSCallback *pc = (CWSCallback*)cb;
 	pc->OnMessage(data);
 }
 
-EM_PORT_API(void) WSOnError(struct WS_CONNECTOR *conn){
-	if (conn == NULL) return;
-	CWSConnector *pc = (CWSConnector*)conn;
+EM_PORT_API(void) WSOnError(struct WS_CB *cb){
+	if (cb == NULL) return;
+	CWSCallback *pc = (CWSCallback*)cb;
 	pc->OnError();
 }
 
-int main(){
-	new CWSConnector("ws://localhost:40001/ws_echo");
-}
+CWSCallback wscb("ws://localhost:40001/ws_echo");
 ```
 
-注意函数`WSNew(const char *url, struct WS_CONNECTOR *conn)`的参数：在创建WebSocket封装对象时，除了提供欲连接WebSocket服务的`url`，还额外传入了`struct WS_CONNECTOR *conn`，后续事件回调时，与该WebSocket对象关联的`conn`会作为事件参数传入。这样当程序同时启动了多个WebSocket连接时，可以为每个WebSocket连接分配一个专用的类实例用于处理其事件。
+与5.1节介绍的XMLHttpRequest封装方法类似，创建WebSocket连接时，我们为它绑定了一个回调对象`cb`，用于处理该连接的各种回调事件。这样当程序同时启动了多个WebSocket连接时，可以为每个WebSocket连接分配不同的的回调处理对象。
 
 导入库部分代码如下：
 
 ```js
 //pkg.js
 mergeInto(LibraryManager.library, {
-    WSNew: function (url, conn) {
-        return JS_WSNew(Pointer_stringify(url), conn);
+    WSNew: function (url, cb) {
+        return JS_WSNew(Pointer_stringify(url), cb);
     },
 
     WSSend: function (ws, data) {
@@ -221,14 +216,14 @@ mergeInto(LibraryManager.library, {
 //ws_wrap.html
 	var g_NextWSID = 1;
 	var g_WSTable = [];	
-	function JS_WSNew(url, conn) {
+	function JS_WSNew(url, cb) {
 		var ws = new WebSocket(url);
-		ws.onopen = function (e) { Module._WSOnOpen(conn); };
-		ws.onclose = function (e) { Module._WSOnClose(conn); };
+		ws.onopen = function (e) { Module._WSOnOpen(cb); };
+		ws.onclose = function (e) { Module._WSOnClose(cb); };
 		ws.onmessage = function (e) {
-			Module.ccall('WSOnMessage', 'null', ['number', 'string'], [conn, e.data]);
+			Module.ccall('WSOnMessage', 'null', ['number', 'string'], [cb, e.data]);
 		};
-		ws.onerror = function (e) { Module._WSOnError(conn); };
+		ws.onerror = function (e) { Module._WSOnError(cb); };
 	
 		var wsid = g_NextWSID++;
 		g_WSTable[wsid] = ws;
@@ -249,12 +244,11 @@ mergeInto(LibraryManager.library, {
 整套程序综合应用了导出C++对象（4.3节）、JavaScript对象注入C（4.5节）、ccall（2.7节）等技术。使用下列命令编译：
 
 ```
-emcc  ws_wrap.cpp --js-library pkg.js -s "EXTRA_EXPORTED_RUNTIME_ME
-THODS=['ccall']" -o ws_wrap.js
+emcc  ws_wrap.cpp --js-library pkg.js -s "EXTRA_EXPORTED_RUNTIME_METHODS=['ccall']" -o ws_wrap.js
 ```
 
 启动WebSocket echo服务，浏览页面，控制台输出如下：
 
-![](images/01-ws-wrap.png)
+![](images/02-ws-wrap.png)
 
-出于简化代码考虑，本节给出的例子未处理`main()`函数内存泄漏、反复调用`WSNew()`导致`g_NextWSID`溢出等情况。由于IO操作往往与程序逻辑强相关，实际项目中需要考虑的问题多种多样，在此无法尽述。
+出于简化代码考虑，本节给出的例子未处理反复调用`WSNew()`导致`g_NextWSID`溢出等情况。由于IO操作往往与程序逻辑强相关，实际项目中需要考虑的问题多种多样，在此无法尽述。

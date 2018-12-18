@@ -74,8 +74,8 @@ However, the operating environment of WebAssembly is very different from the nat
   * [ ] 4.7 Forget about filesystem
 
 * Chapter 5 Network IO
-  * [ ] 5.1 WebSocket
-  * [ ] 5.2 ajax
+  * [ ] 5.1 XMLHttpRequest
+  * [ ] 5.2 WebSocket
   * [ ] 5.3 fetch
 
 * Chapter 6 Multithreading

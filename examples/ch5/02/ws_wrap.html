@@ -10,14 +10,14 @@
 
 	var g_NextWSID = 1;
 	var g_WSTable = [];	
-	function JS_WSNew(url, conn) {
+	function JS_WSNew(url, cb) {
 		var ws = new WebSocket(url);
-		ws.onopen = function (e) { Module._WSOnOpen(conn); };
-		ws.onclose = function (e) { Module._WSOnClose(conn); };
+		ws.onopen = function (e) { Module._WSOnOpen(cb); };
+		ws.onclose = function (e) { Module._WSOnClose(cb); };
 		ws.onmessage = function (e) {
-			Module.ccall('WSOnMessage', 'null', ['number', 'string'], [conn, e.data]);
+			Module.ccall('WSOnMessage', 'null', ['number', 'string'], [cb, e.data]);
 		};
-		ws.onerror = function (e) { Module._WSOnError(conn); };
+		ws.onerror = function (e) { Module._WSOnError(cb); };
 	
 		var wsid = g_NextWSID++;
 		g_WSTable[wsid] = ws;
