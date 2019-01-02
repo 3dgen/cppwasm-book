@@ -1,6 +1,6 @@
 #  WebAssembly friendly programming with C/C++
 
-This book introduces the use of C/C++ for WebAssembly development. For the basics of WebAssembly, please refer to the "Introduction to the WebAssembly Standard"(Simplified Chinese), the sale address:
+This book introduces the use of C/C++ for WebAssembly development. For the basics of WebAssembly, please refer to the "WebAssembly Primer"(Simplified Chinese), the sale address:
 
 - EPUB：[https://www.epubit.com/book/detail/40619](https://www.epubit.com/book/detail/40619)
 - JD：[https://item.jd.com/12499372.html](https://item.jd.com/12499372.html)
@@ -31,7 +31,7 @@ However, the operating environment of WebAssembly is very different from the nat
 
 ## Reference
 
-- ["Introduction to the WebAssembly Standard"](https://www.epubit.com/book/detail/40619)
+- ["WebAssembly Primer"](https://www.epubit.com/book/detail/40619)
 - [https://github.com/chai2010/awesome-wasm-zh](https://github.com/chai2010/awesome-wasm-zh)
 
 ----
