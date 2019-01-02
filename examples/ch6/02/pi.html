@@ -1,0 +1,20 @@
+<!doctype html>
+
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>Emscripten:worker</title>
+  </head>
+  <body>
+	<script>
+    var worker = new Worker("pi.js");
+    worker.onmessage = function(e) {
+      console.log("mainThread: message from Worker:" + e.data);
+	  if (e.data == "Worker Ready."){
+		worker.postMessage(20000000);
+	  }
+    }
+	setInterval(function(){console.log("mainThread: timer()");}, 1000);
+	</script>
+  </body>
+</html>
