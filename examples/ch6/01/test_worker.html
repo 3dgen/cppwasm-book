@@ -1,0 +1,19 @@
+<!doctype html>
+
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>Test Worker</title>
+  </head>
+  <body>
+	<script>
+    var worker = new Worker("worker.js");
+    worker.onmessage = function(e) {
+      console.log(e.data);
+    }
+    worker.postMessage("Who are you?");
+    worker.postMessage("Show me the answer.");
+    worker.postMessage("Who's the best programmer in the world?");
+	</script>
+  </body>
+</html>

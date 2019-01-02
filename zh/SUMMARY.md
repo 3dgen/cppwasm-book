@@ -39,10 +39,9 @@
   * [5.1 XMLHttpRequest](ch5-net/ch5-01-http.md)
   * [5.2 WebSocket](ch5-net/ch5-02-websocket.md)
   * 5.3 fetch(TODO)
-  * 5.4 一个通用的网络IO小框架(TODO)
 
-* 第6章 多线程(TODO)
-  * 6.1 JavaScript中的多线模型(TODO)
+* [第6章 多线程](ch6-threads/readme.md)
+  * [6.1 JavaScript中的并发模型](ch6-threads/ch6-01-worker.md)
   * 6.2 一个例子(TODO)
   * 6.3 一个通用的多线程小框架(TODO)
 
