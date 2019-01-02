@@ -42,7 +42,7 @@
 
 * [第6章 多线程](ch6-threads/readme.md)
   * [6.1 JavaScript中的并发模型](ch6-threads/ch6-01-worker.md)
-  * 6.2 一个例子(TODO)
+  * [6.2 一个例子](ch6-threads/ch6-02-sample.md)
   * 6.3 一个通用的多线程小框架(TODO)
 
 * 第7章 GUI及交互(TODO)
