@@ -38,14 +38,14 @@
 * [第5章 网络IO](ch5-net/readme.md)
   * [5.1 XMLHttpRequest](ch5-net/ch5-01-http.md)
   * [5.2 WebSocket](ch5-net/ch5-02-websocket.md)
-  * 5.3 fetch(TODO)
+  <!--* 5.3 fetch(TODO)-->
 
 * [第6章 多线程](ch6-threads/readme.md)
   * [6.1 JavaScript中的并发模型](ch6-threads/ch6-01-worker.md)
   * [6.2 在Worker中使用Emscripten](ch6-threads/ch6-02-sample.md)
-  * 6.3 一个通用的多线程小框架(TODO)
+  <!--* 6.3 一个通用的多线程小框架(TODO)-->
 
-* 第7章 GUI及交互(TODO)
+<!--* 第7章 GUI及交互(TODO)
   * 7.1 canvas(TODO)
   * 7.2 鼠标事件(TODO)
   * 7.3 键盘事件(TODO)
@@ -54,3 +54,4 @@
 * 第8章 工程管理(TODO)
   * 8.1 使用Makefile(TODO)
   * 8.2 静态库(TODO)
+-->

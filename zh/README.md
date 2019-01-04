@@ -76,14 +76,14 @@ WebAssembly是新一代的Web虚拟机标准，C/C++程序可以通过Emscripten
 * [第5章 网络IO](ch5-net/readme.md)
   * [x] [5.1 XMLHttpRequest](ch5-net/ch5-01-http.md)
   * [x] [5.2 WebSocket](ch5-net/ch5-02-websocket.md)
-  * [ ] 5.3 fetch
+  <!--* [ ] 5.3 fetch-->
 
 * [第6章 多线程](ch6-threads/readme.md)
   * [x] [6.1 JavaScript中的并发模型](ch6-threads/ch6-01-worker.md)
   * [x] [6.2 在Worker中使用Emscripten](ch6-threads/ch6-02-sample.md)
-  * [ ] 6.3 一个通用的多线程小框架
+  <!--* [ ] 6.3 一个通用的多线程小框架-->
 
-* 第7章 GUI及交互
+<!--* 第7章 GUI及交互
   * [ ] 7.1 canvas
   * [ ] 7.2 鼠标事件
   * [ ] 7.3 键盘事件
@@ -91,7 +91,7 @@ WebAssembly是新一代的Web虚拟机标准，C/C++程序可以通过Emscripten
 
 * 第8章 工程管理
   * [ ] 8.1 使用Makefile
-  * [ ] 8.2 静态库
+  * [ ] 8.2 静态库-->
 
 ----
 
