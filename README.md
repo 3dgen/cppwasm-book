@@ -1,7 +1,14 @@
-# Multiple Language Versions
+# WebAssembly friendly programming with C/C++
 
-- [English](en/README.md)
-- [中文](zh/README.md)
+![](en/cover.png)
+
+- [English: WebAssembly friendly programming with C/C++](en/README.md)
+
+# C/C++面向WebAssembly编程
+
+![](zh/cover.png)
+
+- [中文：C/C++面向WebAssembly编程](zh/README.md)
 
 # Community
 QQ Group: 726475047
