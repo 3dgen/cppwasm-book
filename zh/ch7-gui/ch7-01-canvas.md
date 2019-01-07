@@ -90,7 +90,13 @@ html中声明了id为`myCanvas`的Canvas元素，在每帧更新时，从Emscrip
 
 ![](images/01-flow.png)
 
-编译`canvas.cc`，浏览页面，将在青色背景上显示一个不断变大变小的红色圆：
+使用以下命令编译：
+
+```
+emcc canvas.cc -o canvas.js
+```
+
+浏览页面，青色背景上将显示一个不断变大变小的红色圆：
 
 ![](images/01-page.png)
 

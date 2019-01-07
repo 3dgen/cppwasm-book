@@ -47,7 +47,7 @@
 
 * [第7章 GUI及交互](ch7-gui/readme.md)
   * [7.1 Canvas](ch7-gui/ch7-01-canvas.md)
-  * 7.2 鼠标事件(TODO)
+  * [7.2 鼠标事件](ch7-gui/ch7-02-mouse.md)
   * 7.3 键盘事件(TODO)
   * 7.4 “Life”游戏及小结(TODO)
 
