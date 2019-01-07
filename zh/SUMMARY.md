@@ -45,13 +45,13 @@
   * [6.2 在Worker中使用Emscripten](ch6-threads/ch6-02-sample.md)
   <!--* 6.3 一个通用的多线程小框架(TODO)-->
 
-<!--* 第7章 GUI及交互(TODO)
-  * 7.1 canvas(TODO)
+* [第7章 GUI及交互](ch7-gui/readme.md)
+  * [7.1 Canvas](ch7-gui/ch7-01-canvas.md)
   * 7.2 鼠标事件(TODO)
   * 7.3 键盘事件(TODO)
-  * 7.4 触屏事件(TODO)
+  * 7.4 “Life”游戏及小结(TODO)
 
-* 第8章 工程管理(TODO)
+<!--* 第8章 工程管理(TODO)
   * 8.1 使用Makefile(TODO)
   * 8.2 静态库(TODO)
 -->

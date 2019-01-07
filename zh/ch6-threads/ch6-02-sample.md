@@ -1,4 +1,4 @@
-# 6.2 在`Worker`中使用Emscripten
+# 6.2 在Worker中使用Emscripten
 
 本节将展示一个使用Emscripten及`Worker`的并发执行的例子。
 
