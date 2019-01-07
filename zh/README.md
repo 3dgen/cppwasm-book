@@ -38,7 +38,7 @@ WebAssembly是新一代的Web虚拟机标准，C/C++程序可以通过Emscripten
 
 ## 当前进度
 
-* 第0章 WebAssembly简介
+<!--* 第0章 WebAssembly简介-->
 
 * [第1章 Emscripten快速入门](ch1-quick-guide/readme.md)
   * [x] [1.1 安装Emscripten](ch1-quick-guide/ch1-01-install.md)
@@ -86,7 +86,7 @@ WebAssembly是新一代的Web虚拟机标准，C/C++程序可以通过Emscripten
 * [第7章 GUI及交互](ch7-gui/readme.md)
   * [x] [7.1 Canvas](ch7-gui/ch7-01-canvas.md)
   * [x] [7.2 鼠标事件](ch7-gui/ch7-02-mouse.md)
-  * [ ] 7.3 键盘事件
+  * [x] [7.3 键盘事件](ch7-gui/ch7-03-keyboard.md)
   * [ ] 7.4 Life游戏及小结
 
 <!--* 第8章 工程管理

@@ -1,6 +1,6 @@
 # 目录
 
-* [第0章 WebAssembly简介](ch0-intro/readme.md)
+<!--* [第0章 WebAssembly简介](ch0-intro/readme.md)-->
 
 * [第1章 Emscripten快速入门](ch1-quick-guide/readme.md)
   * [1.1 安装Emscripten](ch1-quick-guide/ch1-01-install.md)
@@ -48,7 +48,7 @@
 * [第7章 GUI及交互](ch7-gui/readme.md)
   * [7.1 Canvas](ch7-gui/ch7-01-canvas.md)
   * [7.2 鼠标事件](ch7-gui/ch7-02-mouse.md)
-  * 7.3 键盘事件(TODO)
+  * [7.3 键盘事件](ch7-gui/ch7-03-keyboard.md)
   * 7.4 “Life”游戏及小结(TODO)
 
 <!--* 第8章 工程管理(TODO)
