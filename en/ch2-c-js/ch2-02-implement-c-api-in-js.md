@@ -1,4 +1,4 @@
-# 2.2 Implemente C API in JavaScript
+# 2.2 Implement C API in JavaScript
 
 Emscripten provides a variety of methods for calling JavaScript functions from C, including:
 - `EM_JS`/`EM_ASM` macro inline JavaScript code.
@@ -22,11 +22,11 @@ EM_PORT_API(void) print_the_answer() {
 }
 ```
 
-`print_the_answer()` calls the function `js_add()` to calculate 21+21, then calls `js_console_log_int()` to print the result, the latter only gives the declaration, and the they will be implemented in JavaScript.
+`print_the_answer()` calls the function `js_add()` to calculate 21+21, then calls `js_console_log_int()` to print the result, the latter only gives the declaration, and they will be implemented in JavaScript.
 
 For the same reason as 2.1.1, the C function API declaration should use C-style name decoration. For the sake of simplicity, we used the `EM_PORT_API` macro when declaring `js_add()` and `js_console_log_int()` (this macro will add the `EMSCRIPTEN_KEEPALIVE` definition, since the function is not implemented in C code, at this time` EMSCRIPTEN_KEEPALIVE` has no practical effect).
 
-## 2.2.2 Implemente C functions in JavaScript
+## 2.2.2 Implement C functions in JavaScript
 
 Create a JavaScript source file `pkg.js` as follows:
 
@@ -77,7 +77,7 @@ Since then, we have implemented a C API in JavaScript and called it from C.
 
 ## 2.2.3 Closure restriction and solution
 
-Closure can't be used directly in the "mergeInto(LibraryManager.library..." functions. Of course this can be solved by calling another JavaScript function in the injected function. For example, we create `closure.cc` as follows:
+Closure can't be used directly in the "mergeInto(LibraryManager.library..." functions. Of course this can be solved by calling another JavaScript function in the injected one. For example, we create `closure.cc` as follows:
 
 ```c
 //closure.cc
@@ -125,9 +125,9 @@ mergeInto(LibraryManager.library, {
   </body>
 ```
 
-Readers familiar with JavaScript must have discovered that `jsShowMeTheAnswer()` uses closures.
+Readers familiar with JavaScript must have discovered that `jsShowMeTheAnswer()` uses closure.
 
-Using this method, we can not only bypass the closure restriction, but also dynamically adjust the behavior of the injected functions - as in the above example, we can adjust the `jsShowMeTheAnswer()` object in the JavaScript to change the return value of the `show_me_the_answer()` function in the C environment.
+Using this method, we can not only bypass the closure restriction, but also dynamically adjust the behavior of the injected functions - as in the above example, we can adjust the `jsShowMeTheAnswer()` object in the JavaScript to change the return value of the C function `show_me_the_answer()`.
 
 ## 2.2.4 Advantages and disadvantages
 

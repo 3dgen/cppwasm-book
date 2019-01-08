@@ -46,7 +46,7 @@ However, the operating environment of WebAssembly is very different from the nat
 
 * [Chapter 2 Connecting C and JavaScript](ch2-c-js/readme.md)
   * [x] [2.1 Calling compiled C functions from JavaScript](ch2-c-js/ch2-01-js-call-c.md)
-  * [x] [2.2 Implemente C API in JavaScript](ch2-c-js/ch2-02-implement-c-api-in-js.md)
+  * [x] [2.2 Implement C API in JavaScript](ch2-c-js/ch2-02-implement-c-api-in-js.md)
   * [ ] 2.3 Memory model
   * [ ] 2.4 Exchange data between C and JavaScript
   * [ ] 2.5 Using EM_ASM
