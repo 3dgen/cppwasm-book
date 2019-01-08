@@ -12,6 +12,7 @@ Emscripten提供了多种在C环境调用JavaScript的方法，包括：
 在C环境中，我们经常碰到这种情况：模块A调用了由模块B实现的函数——既在模块A中创建函数声明，在模块B中实现函数体。在Emscripten中，C代码部分是模块A，JavaScript代码部分是模块B。例如创建`capi_js.cc`如下：
 
 ```c
+//capi_js.cc
 EM_PORT_API(int) js_add(int a, int b);
 EM_PORT_API(void) js_console_log_int(int param);
 
@@ -30,6 +31,7 @@ EM_PORT_API(void) print_the_answer() {
 创建一个JavaScript源文件`pkg.js`如下：
 
 ```js
+//pkg.js
 mergeInto(LibraryManager.library, {
     js_add: function (a, b) {
         console.log("js_add");
@@ -55,6 +57,7 @@ emcc capi_js.cc --js-library pkg.js -o capi_js.js
 `--js-library pkg.js`意为将`pkg.js`作为附加库参与链接。命令执行后得到`capi_js.js`以及`capi_js.wasm`。按照之前章节的例子在网页中将其载入，并调用C导出的`print_the_answer()`函数：
 
 ```html
+//capi_js.html
   <body>
     <script>
     Module = {};
@@ -66,12 +69,9 @@ emcc capi_js.cc --js-library pkg.js -o capi_js.js
   </body>
 ```
 
-控制台将输出：
+浏览页面，控制台将输出：
 
-```
-js_add
-js_console_log_int:42
-```
+![](images/02-c-api-js.png)
 
 自此，我们实现了在C环境调用JavaScript方法。
 
@@ -80,6 +80,7 @@ js_console_log_int:42
 使用“mergeInto(LibraryManager.library……”注入的方法不能直接使用闭包。当然这可以通过在注入方法中调用其他JavaScript方法来间接实现。比如我们创建`closure.cc`如下：
 
 ```c
+//closure.cc
 #include <stdio.h>
 
 EM_PORT_API(int) show_me_the_answer();
@@ -92,6 +93,7 @@ EM_PORT_API(void) func() {
 `show_me_the_answer()`函数在`closure_pkg.js`中实现
 
 ```js
+//closure_pkg.js
 mergeInto(LibraryManager.library, {
     show_me_the_answer: function () {
         return jsShowMeTheAnswer();
@@ -102,6 +104,7 @@ mergeInto(LibraryManager.library, {
 `show_me_the_answer()`调用了`jsShowMeTheAnswer()`，后者将在网页`closure.html`中实现：
 
 ```html
+//closure.html
   <body>
     <script>
     function f1(){
