@@ -16,6 +16,8 @@ cover:
 deploy:
 	-rm -rf _book
 	gitbook build
+	cp -r ./examples/ ./_book/examples/
+	echo \!"*.wasm" >_book/examples/.gitignore
 
 	cd _book && \
 		git init && \
