@@ -1,6 +1,6 @@
 # 1.2 你好，世界！
 
-本节将从经典的helloworld例程入手，介绍如何使用Emscripten编译C/C++代码并运行测试。
+本节将从经典的"Hello, wolrd!"例程入手，介绍如何使用Emscripten编译C/C++代码并运行测试。
 
 ## 1.2.1 生成wasm
 
@@ -16,7 +16,7 @@ int main() {
 }
 ```
 
-进入控制台，使用1.1节中介绍的`emsdk_env`命令设置Emscripten环境变量后，切换至`hello.cc`所在的目录，执行：
+进入控制台，使用1.1节中介绍的`emsdk_env`命令设置Emscripten环境变量后，切换至`hello.cc`所在的目录，执行以下命令：
 
 ```
 emcc hello.cc

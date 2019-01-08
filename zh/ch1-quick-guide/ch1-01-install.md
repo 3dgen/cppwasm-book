@@ -75,7 +75,7 @@ $ emcc hello.c
 $ docker run --rm -it -v `pwd`:/src apiaryio/emcc emcc
 ```
 
-其中参数`--rm`表示运行结束后删除容器资源，参数`-it`表示定向容器的标准输入和输出到命令行环境，参数`-v ‘pwd’:/src`表示将当前目录映射到容器的/src目录。之后的`apiaryio/emcc`为容器对应镜像的名字，里面包含了Emscripten开发环境。最好的emcc参数表示容器中运行的命令，和本地的emcc命令是一致的。
+其中参数`--rm`表示运行结束后删除容器资源，参数`-it`表示定向容器的标准输入和输出到命令行环境，参数`-v 'pwd':/src`表示将当前目录映射到容器的/src目录。之后的`apiaryio/emcc`为容器对应镜像的名字，里面包含了Emscripten开发环境。最后的emcc参数表示容器中运行的命令，和本地的emcc命令是一致的。
 
 以上命令默认获取的是latest版本，也就是最新的Emscripten版本。对于正式开发环境，我们推荐安装确定版本的Emscripten。容器镜像的全部版本可以从这里查看：[https://hub.docker.com/r/apiaryio/emcc/tags/](https://hub.docker.com/r/apiaryio/emcc/tags/)。如果将`apiaryio/emcc`替换为`apiaryio/emcc:1.38.11`，则表示采用的是v1.38.11版本的镜像。
 
