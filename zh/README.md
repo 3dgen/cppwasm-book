@@ -87,7 +87,7 @@ WebAssembly是新一代的Web虚拟机标准，C/C++程序可以通过Emscripten
   * [x] [7.1 Canvas](ch7-gui/ch7-01-canvas.md)
   * [x] [7.2 鼠标事件](ch7-gui/ch7-02-mouse.md)
   * [x] [7.3 键盘事件](ch7-gui/ch7-03-keyboard.md)
-  * [ ] 7.4 Life游戏及小结
+  * [x] [7.4 `Life`游戏](ch7-gui/ch7-04-life.md)
 
 <!--* 第8章 工程管理
   * [ ] 8.1 使用Makefile

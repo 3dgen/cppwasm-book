@@ -49,7 +49,7 @@
   * [7.1 Canvas](ch7-gui/ch7-01-canvas.md)
   * [7.2 鼠标事件](ch7-gui/ch7-02-mouse.md)
   * [7.3 键盘事件](ch7-gui/ch7-03-keyboard.md)
-  * 7.4 “Life”游戏及小结(TODO)
+  * [7.4 `Life`游戏](ch7-gui/ch7-04-life.md)
 
 <!--* 第8章 工程管理(TODO)
   * 8.1 使用Makefile(TODO)
