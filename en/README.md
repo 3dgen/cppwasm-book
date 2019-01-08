@@ -38,13 +38,11 @@ However, the operating environment of WebAssembly is very different from the nat
 
 ## Progress
 
-* Chapter 0: Introduction to WebAssembly
-
-* Chapter 1 Getting started with Emscripten
-  * [ ] 1.1 Installing Emscripten
-  * [ ] 1.2 Hello, world!
-  * [ ] 1.3 Taking a look at the Emscripten glue code
-  * [ ] 1.4 Selecting compilation target
+* [Chapter 1 Getting started with Emscripten](ch1-quick-guide/readme.md)
+  * [x] [1.1 Installing Emscripten](ch1-quick-guide/ch1-01-install.md)
+  * [x] [1.2 Hello, world!](ch1-quick-guide/ch1-02-helloworld.md)
+  * [x] [1.3 Taking a look at the Emscripten glue code](ch1-quick-guide/ch1-03-glue-code.md)
+  * [x] [1.4 Selecting compilation target](ch1-quick-guide/ch1-04-compile.md)
 
 * Chapter 2 Connecting C and JavaScript
   * [ ] 2.1 Calling compiled C functions from JavaScript
@@ -70,7 +68,7 @@ However, the operating environment of WebAssembly is very different from the nat
   * [ ] 4.3 Exporting C++ objects using the C interface
   * [ ] 4.4 Lifecycle control for C++ object
   * [ ] 4.5 Importing JavaScript object using C interface
-  * [ ] 4.6 Be careful with int64
+  * [ ] 4.6 Be careful with `int64`
   * [ ] 4.7 Forget about filesystem
 
 * Chapter 5 Network IO
@@ -81,17 +79,17 @@ However, the operating environment of WebAssembly is very different from the nat
 * Chapter 6 Multithreading
   * [ ] 6.1 Multithreading in JavaScript
   * [ ] 6.2 Example
-  * [ ] 6.3 A simple framework for multithreading
+  <!--* [ ] 6.3 A simple framework for multithreading-->
 
 * Chapter 7 GUI
   * [ ] 7.1 canvas
   * [ ] 7.2 Mouse event
   * [ ] 7.3 Keyboard event
-  * [ ] 7.4 Touch event
+  * [ ] 7.4 Life
 
-* Chapter 8 Project management
+<!--* Chapter 8 Project management
   * [ ] 8.1 Using Makefile
-  * [ ] 8.2 Using static library
+  * [ ] 8.2 Using static library-->
 
 ----
 
