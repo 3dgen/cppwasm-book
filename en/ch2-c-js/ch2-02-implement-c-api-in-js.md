@@ -1,15 +1,15 @@
 # 2.2 Implement C API in JavaScript
 
 Emscripten provides a variety of methods for calling JavaScript functions from C, including:
-- `EM_JS`/`EM_ASM` macro inline JavaScript code.
-- `emscripten_run_script` function.
+- Executing inline JavaScript with `EM_JS`/`EM_ASM`.
+- Executing JavaScript code strings with `emscripten_run_script` function.
 - Implement C API in JavaScript, or another way to say "JavaScript function injection".
 
 This section will focus on the last one.
 
-## 2.2.1 C function declaration
+## 2.2.1 Declaring C API
 
-In the C environment, we often encounter this situation: Module A calls the function implemented by module B(creating a function declaration in module A and a function body in module B). In Emscripten, the C code part is module A and the JavaScript code part is module B. For example, create `capi_js.cc` as follows:
+In C, we often encounter this situation: Module A calls the function implemented by module B - creating a function declaration in module A and a function body in module B. In our case, the C code is module A and the JavaScript code is module B. For example, create `capi_js.cc` as follows:
 
 ```c
 //capi_js.cc
@@ -22,9 +22,9 @@ EM_PORT_API(void) print_the_answer() {
 }
 ```
 
-`print_the_answer()` calls the function `js_add()` to calculate 21+21, then calls `js_console_log_int()` to print the result, the latter only gives the declaration, and they will be implemented in JavaScript.
+`print_the_answer()` calls the function `js_add()` to calculate 21+21, then calls `js_console_log_int()` to print the result. The code only gives the declaration of `js_add()`/`js_console_log_int()`, these two functions will be implemented in JavaScript.
 
-For the same reason as 2.1.1, the C function API declaration should use C-style name decoration. For the sake of simplicity, we used the `EM_PORT_API` macro when declaring `js_add()` and `js_console_log_int()` (this macro will add the `EMSCRIPTEN_KEEPALIVE` definition, since the function is not implemented in C code, at this time` EMSCRIPTEN_KEEPALIVE` has no practical effect).
+For the same reason as 2.1.1, the C function API declaration should use C-style name decoration. For the sake of simplicity, we used the `EM_PORT_API` macro when declaring `js_add()` and `js_console_log_int()`.
 
 ## 2.2.2 Implement C functions in JavaScript
 
@@ -46,7 +46,7 @@ mergeInto(LibraryManager.library, {
 
 The code above defines two objects `js_add` and `js_console_log_int` according to the declarations of the two C functions, and merges them into `LibraryManager.library` - in JavaScript, methods (or functions) are also objects.
 
-> **tips** `LibraryManager.library` can be simply understood as a library for injecting JavaScript into the C environment, as described in 2.2.1, "Module B". Although in fact it is far more complicated than this, this simple analogy is sufficient for most applications.
+> **tips** `LibraryManager.library` can be simply understood as a library for injecting JavaScript into C, as described in 2.2.1, module B. Although in fact it is far more complicated than this, this simple analogy is sufficient for most cases.
 
 Now we execute the following command:
 
@@ -54,7 +54,7 @@ Now we execute the following command:
 emcc capi_js.cc --js-library pkg.js -o capi_js.js
 ```
 
-`--js-library pkg.js` means to use `pkg.js` as an additional library while linking. After the command is executed, we'll get `capi_js.js` and `capi_js.wasm`. Load it in the web page as in the previous chapter and call the exported function`print_the_answer()`:
+`--js-library pkg.js` means to use `pkg.js` as an additional library while linking. The command above will create `capi_js.js` and `capi_js.wasm`. Load it in the web page as in the previous chapter and call the exported function`print_the_answer()`:
 
 ```html
 //capi_js.html
@@ -73,11 +73,11 @@ After browsing the page, the console will output:
 
 ![](images/02-c-api-js.png)
 
-Since then, we have implemented a C API in JavaScript and called it from C.
+Since then, we have implemented C API in JavaScript and called it from C.
 
 ## 2.2.3 Closure restriction and solution
 
-Closure can't be used directly in the "mergeInto(LibraryManager.library..." functions. Of course this can be solved by calling another JavaScript function in the injected one. For example, we create `closure.cc` as follows:
+Closure can't be used directly in the injected JavaScript functions. Of course this can be solved by calling another JavaScript function in the injected one. For example, we create `closure.cc` as follows:
 
 ```c
 //closure.cc
@@ -127,9 +127,9 @@ mergeInto(LibraryManager.library, {
 
 Readers familiar with JavaScript must have discovered that `jsShowMeTheAnswer()` uses closure.
 
-Using this method, we can not only bypass the closure restriction, but also dynamically adjust the behavior of the injected functions - as in the above example, we can adjust the `jsShowMeTheAnswer()` object in the JavaScript to change the return value of the C function `show_me_the_answer()`.
+Using this method, we can not only bypass the closure restriction, but also dynamically adjust the behavior of the injected functions - as in the above example, we can modify the `jsShowMeTheAnswer()` object in the JavaScript to change the return value of the C function `show_me_the_answer()`.
 
 ## 2.2.4 Advantages and disadvantages
 
 - Advantages: Using JavaScript function injection can keep the C code pure - the C code doesn't contain any JavaScript code;
-- Disadvantages: This method requires an additional .js library file to be created, which is slightly more troublesome to maintain.
+- Disadvantages: An additional .js library file need to be created, which is slightly more troublesome to maintain.
