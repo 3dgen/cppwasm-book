@@ -73,7 +73,7 @@ emcc emscripten_run_script.cc -std=c++11  -o emscripten_run_script.js
 返回值：
 - int
 
-该函数`与emscripten_run_script()`类似，区别是它会将输入的脚本的执行结果作为整型数返回，例如：
+该函数与`emscripten_run_script()`类似，区别是它会将输入的脚本的执行结果作为整型数返回，例如：
 
 ```c
 	int num = emscripten_run_script_int(R"(
@@ -104,7 +104,7 @@ num:13
 返回值：
 - char *
 
-该函数`emscripten_run_script_int()`类似，区别是返回值为字符串，例如：
+该函数与`emscripten_run_script_int()`类似，区别是返回值为字符串，例如：
 
 ```c
 	const char* str = emscripten_run_script_string(R"(
@@ -140,3 +140,7 @@ The answer is 42.
 ```
 
 该函数在C/C++内存中分配了空间，用于保存传入脚本执行后返回的字符串。并且从代码中不难发现，多次调用`emscripten_run_script_string()`时，后面调用的结果有可能覆盖前面调用的结果——因为`me.buffer`是重复使用的。
+
+本节例子的输出如下：
+
+![](images/06-run-script.png)

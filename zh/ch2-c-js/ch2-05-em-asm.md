@@ -38,7 +38,7 @@ The answer is:42
 	);
 ```
 
-`EM_ASM`宏只能执行嵌入的JavaScript代码, 无法传入参数或获取返回结果.
+`EM_ASM`宏只能执行嵌入的JavaScript代码, 无法传入参数或获取返回结果。
 
 ## 2.5.2 `EM_ASM_`/`EM_ASM_DOUBLE`
 
@@ -101,7 +101,7 @@ $ 1 : 13
 
 ## 2.5.3 `EM_ASM_INT_V`/`EM_ASM_DOUBLE_V`
 
-如果嵌入的JavaScript代码不需要输出参数，可以使用`EM_ASM_INT_V`/`EM_ASM_DOUBLE_V`宏。由于没有参数，嵌入的代码无需用`{}`包围，例如：
+如果嵌入的JavaScript代码不需要参数，可以使用`EM_ASM_INT_V`/`EM_ASM_DOUBLE_V`宏。由于没有参数，嵌入的代码无需用`{}`包围，例如：
 
 ```c
 	int answer = EM_ASM_INT_V(return 42);
@@ -109,3 +109,7 @@ $ 1 : 13
 	double pi_js = EM_ASM_DOUBLE_V(return 3.14159);
 	printf("PI:%lf\n", pi_js);
 ```
+
+本节例子的输出如下：
+
+![](images/05-em-asm.png)

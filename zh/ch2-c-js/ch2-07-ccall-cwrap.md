@@ -242,3 +242,7 @@ function cwrap(ident, returnType, argTypes, opts) {
   }
 }
 ```
+
+本节例子的输出如下：
+
+![](images/07-ccall-cwrap.png)
