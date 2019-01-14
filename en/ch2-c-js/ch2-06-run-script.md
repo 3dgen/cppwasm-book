@@ -69,7 +69,7 @@ Declaration:
 
 Parameters:
 
-- `script`：包含JavaScript脚本语句的字符串。
+- `script`: The script to evaluate.
 
 Return type:
 
@@ -101,7 +101,7 @@ Declaration:
 
 Parameters:
 
-- `script`：包含JavaScript脚本语句的字符串。
+- `script`: The script to evaluate.
 
 Return type:
 - char *
