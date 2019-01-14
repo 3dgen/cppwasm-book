@@ -52,7 +52,7 @@ This is equivalent to calling `Module._add()` directly as follows:
 	var result = Module._add(13, 42);
 ```
 
-The advantage of `ccall` is that you can use the string /`Uint8Array`/`Int8Array` as parameters. For example, the C function is as follows:
+The advantage of `ccall` is that you can use the string /`Uint8Array`/`Int8Array` as parameters. For example, a C function as follows:
 
 ```c
 //ccall_wrap.cc
