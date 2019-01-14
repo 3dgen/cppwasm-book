@@ -1,6 +1,6 @@
 # 2.4 Exchange data between C and JavaScript
 
-We introduced the memory model and the basic usage of and `Module.HEAP` in 2.3. This section will delve into how to exchange data between JavaScript and C.
+We introduced the memory model and the basic usage of `Module.HEAP` in 2.3. This section will delve into how to exchange data between JavaScript and C.
 
 ## 2.4.1 Parameters and return values
 
