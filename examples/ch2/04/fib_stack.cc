@@ -17,7 +17,7 @@
 
 EM_PORT_API (void) js_print_fib(int* ptr, int count);
 
-EM_PORT_API(void) fibonacci10() {
+EM_PORT_API(void) fibonacci20() {
 	static const int count = 20;
 	int re[count];
 

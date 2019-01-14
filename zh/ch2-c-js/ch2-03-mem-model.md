@@ -84,12 +84,7 @@ JavaScript部分代码如下：
 
 接下来我们修改了`int_ptr`及`double_ptr`地址对应内存的值，然后调用C函数`print_data()`。页面发布通过浏览器访问后，开发者面板控制台输出：
 
-```
-JS{int_value:42}
-JS{double_value:3.1415926}
-C{g_int:13}
-C{g_double:123456.789000}
-```
+![](images/03-mem.png)
 
 由此可见，在JavaScript中正确读取了C的内存数据；JavaScript中写入的数据，在C中亦能正确获取。
 

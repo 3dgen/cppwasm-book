@@ -42,7 +42,7 @@ source ./emsdk_env.sh
 将为当前控制台配置Emscripten各个组件的PATH等环境变量。
 
 
-在Windows环境下的安装方法基本一致，区别是使用“emsdk.bat”代替“emsdk”，使用“emsdk_env.bat”代替“source ./emsdk_env.sh”。安装及激活执行：
+在Windows环境下的安装方法基本一致，区别是使用`emsdk.bat`代替`emsdk`，使用`emsdk_env.bat`代替`source ./emsdk_env.sh`。安装及激活执行：
 
 ```
 emsdk.bat update
@@ -50,13 +50,13 @@ emsdk.bat install latest
 emsdk.bat activate latest
 ```
 
-配置环境变量执行：
+设置环境变量执行：
 
 ```
 emsdk_env.bat
 ```
 
-> **tips** 安装及激活只需要执行一次；以后在新建的控制台中配置一次环境变量后，即可使用Emscripten核心命令emcc。在Windows环境下，如果想把Emscripten的环境变量注册为全局变量，可以以管理员身份运行“emsdk.bat activate latest --global”，该命令将更改系统的环境变量，使得以后无需再运行“emsdk_env.bat”，该方法有潜在的副作用：它将环境变量指向了Emscripten内置的Node.js、Python、Java，若系统中安装了这些组件的其他版本，可能引发冲突。
+> **tips** 安装及激活只需要执行一次；以后在新建的控制台中设置一次环境变量后，即可使用Emscripten核心命令emcc。在Windows环境下，如果想把Emscripten的环境变量注册为全局变量，可以以管理员身份运行`emsdk.bat activate latest --global`，该命令将更改系统的环境变量，使得以后无需再运行`emsdk_env.bat`，该方法有潜在的副作用：它将环境变量指向了Emscripten内置的Node.js、Python、Java，若系统中安装了这些组件的其他版本，可能引发冲突。
 
 
 ## 1.1.2 Docker环境安装Emscripten
@@ -81,9 +81,9 @@ $ docker run --rm -it -v `pwd`:/src apiaryio/emcc emcc
 
 对于国内用户，可以采用Docker官方提供的国内仓库镜像加速下载。仓库镜像代理配置的细节可以参考：[https://www.docker-cn.com/registry-mirror](https://www.docker-cn.com/registry-mirror) 。
 
-## 1.1.3 校验emcc命令
+## 1.1.3 校验安装
 
-emcc是Emscripten的核心命令，正确安装激活并配置环境变量后，执行`emcc -v`可以查看版本信息：
+emcc是Emscripten的核心命令，正确安装激活并设置环境变量后，执行`emcc -v`可以查看版本信息：
 
 ```
 >emcc -v

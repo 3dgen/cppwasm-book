@@ -49,16 +49,9 @@ JavaScript代码如下：
       Module._print_double(2000000.03125);
 ```
 
-控制台将输出：
+浏览页面，控制台输出：
 
-```
-C{print_int() a:3}
-C{print_int() a:4}
-C{print_int() a:-3}
-C{print_int() a:-4}
-C{print_float() a:2000000.000000}
-C{print_double() a:2000000.031250}
-```
+![](images/04-type-conv.png)
 
 可见`Number`传入时，若目标类型为`int`，将执行`向0取整`；若目标类型为`float`，类型转换时有可能损失精度。
 
@@ -117,11 +110,9 @@ JavaScript代码：
       Module._free_buf(ptr);
 ```
 
-上述页面运行后，控制台输出：
+浏览页面，控制台输出：
 
-```
-1 1 2 3 5 8 13 21 34 55 
-```
+![](images/04-fib.png)
 
 > **tips** 在上述例子中，C函数`fibonacci()`在堆上分配了空间，在JavaScript中调用后需要调用`free_buf()`将其释放以免内存泄漏。
 
@@ -131,18 +122,19 @@ JavaScript代码：
 //fib_stack.cc
 EM_PORT_API (void) js_print_fib(int* ptr, int count);
 
-EM_PORT_API(void) fibonacci10() {
-	int re[10];
+EM_PORT_API(void) fibonacci20() {
+	static const int count = 20;
+	int re[count];
 
 	re[0] = 1;
 	int i0 = 0, i1 = 1;
-	for (int i = 1; i < 10; i++){
+	for (int i = 1; i < count; i++){
 		re[i] = i0 + i1;
 		i0 = i1;
 		i1 = re[i];
 	}
 	
-	js_print_fib(re, 10);
+	js_print_fib(re, count);
 }
 ```
 
@@ -168,24 +160,22 @@ mergeInto(LibraryManager.library, {
 emcc fib_stack.cc --js-library fib_stack_pkg.js -o fib_stack.js
 ```
 
-网页中调用`fibonacci10()`：
+网页中调用`fibonacci20()`：
 
 ```js
 //fib_stack.html
     <script>
     Module = {};
     Module.onRuntimeInitialized = function() {
-      Module._fibonacci10();
+      Module._fibonacci20();
     }
     </script>
     <script src="fib_stack.js"></script>
 ```
 
-控制台输出：
+浏览页面，控制台输出：
 
-```
-js_print_fib: 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181 6765
-```
+![](images/04-fib-stack.png)
 
 ## 2.4.3 在JavaScript中分配内存
 

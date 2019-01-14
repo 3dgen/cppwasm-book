@@ -2023,10 +2023,10 @@ var real__fflush = asm["_fflush"]; asm["_fflush"] = function() {
   return real__fflush.apply(null, arguments);
 };
 
-var real__fibonacci10 = asm["_fibonacci10"]; asm["_fibonacci10"] = function() {
+var real__fibonacci20 = asm["_fibonacci20"]; asm["_fibonacci20"] = function() {
   assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
   assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
-  return real__fibonacci10.apply(null, arguments);
+  return real__fibonacci20.apply(null, arguments);
 };
 
 var real__free = asm["_free"]; asm["_free"] = function() {
@@ -2097,10 +2097,10 @@ var _fflush = Module["_fflush"] = function() {
   assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
   assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
   return Module["asm"]["_fflush"].apply(null, arguments) };
-var _fibonacci10 = Module["_fibonacci10"] = function() {
+var _fibonacci20 = Module["_fibonacci20"] = function() {
   assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
   assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
-  return Module["asm"]["_fibonacci10"].apply(null, arguments) };
+  return Module["asm"]["_fibonacci20"].apply(null, arguments) };
 var _free = Module["_free"] = function() {
   assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
   assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
