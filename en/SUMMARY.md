@@ -8,9 +8,9 @@
 
 * [Chapter 2 Connecting C and JavaScript](ch2-c-js/readme.md)
   * [2.1 Calling compiled C functions from JavaScript](ch2-c-js/ch2-01-js-call-c.md)
-  * [2.2 Implemente C API in JavaScript](ch2-c-js/ch2-02-implement-c-api-in-js.md)
-  * 2.3 Memory model
-  * 2.4 Exchange data between C and JavaScript
+  * [2.2 Implement C API in JavaScript](ch2-c-js/ch2-02-implement-c-api-in-js.md)
+  * [2.3 Memory model](ch2-c-js/ch2-03-mem-model.md)
+  * [2.4 Exchange data between C and JavaScript](ch2-c-js/ch2-04-data-exchange.md)
   * 2.5 Using EM_ASM
   * 2.6 Using emscripten_run_script
   * 2.7 Using ccall/cwrap
