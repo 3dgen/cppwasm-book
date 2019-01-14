@@ -11,10 +11,10 @@
   * [2.2 Implement C API in JavaScript](ch2-c-js/ch2-02-implement-c-api-in-js.md)
   * [2.3 Memory model](ch2-c-js/ch2-03-mem-model.md)
   * [2.4 Exchange data between C and JavaScript](ch2-c-js/ch2-04-data-exchange.md)
-  * 2.5 Using EM_ASM
-  * 2.6 Using emscripten_run_script
-  * 2.7 Using ccall/cwrap
-  * 2.8 Supplement
+  * [2.5 Using `EM_ASM`](ch2-c-js/ch2-05-em-asm.md)
+  * [2.6 Using `emscripten_run_script`](ch2-c-js/ch2-06-run-script.md)
+  * [2.7 Using `ccall`/`cwrap`](ch2-c-js/ch2-07-ccall-cwrap.md)
+  * [2.8 Supplement](ch2-c-js/ch2-08-ext.md)
 
 * Chapter 3 Emscripten runtime
   * 3.1 Runtime lifecycle

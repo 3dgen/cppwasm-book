@@ -49,10 +49,10 @@ However, the operating environment of WebAssembly is very different from the nat
   * [x] [2.2 Implement C API in JavaScript](ch2-c-js/ch2-02-implement-c-api-in-js.md)
   * [x] [2.3 Memory model](ch2-c-js/ch2-03-mem-model.md)
   * [x] [2.4 Exchange data between C and JavaScript](ch2-c-js/ch2-04-data-exchange.md)
-  * [ ] 2.5 Using EM_ASM
-  * [ ] 2.6 Using emscripten_run_script
-  * [ ] 2.7 Using ccall/cwrap
-  * [ ] 2.8 Supplement
+  * [x] [2.5 Using `EM_ASM`](ch2-c-js/ch2-05-em-asm.md)
+  * [x] [2.6 Using `emscripten_run_script`](ch2-c-js/ch2-06-run-script.md)
+  * [x] [2.7 Using `ccall`/`cwrap`](ch2-c-js/ch2-07-ccall-cwrap.md)
+  * [x] [2.8 Supplement](ch2-c-js/ch2-08-ext.md)
 
 * Chapter 3 Emscripten runtime
   * [ ] 3.1 Runtime lifecycle
