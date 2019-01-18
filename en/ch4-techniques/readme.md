@@ -1,0 +1,3 @@
+# Chapter 4 General techniques that WebAssembly friendly
+
+This chapter will discuss some of the common problems that are often encountered when writing C/C++ programs which use WebAssembly as the target. These experiences come from our actual work and naturally cannot cover all situations. The solution we propose is not the only one, and probably not the best one. The C/C++ skills are so vast, the road to elegant programming has no end.
