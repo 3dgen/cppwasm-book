@@ -55,18 +55,18 @@ However, the operating environment of WebAssembly is very different from the nat
   * [x] [2.8 Supplement](ch2-c-js/ch2-08-ext.md)
 
 * Chapter 3 Emscripten runtime
-  * [ ] 3.1 Runtime lifecycle
-  * [ ] 3.2 Message loop
+  * [ ] [3.1 Runtime lifecycle]
+  * [ ] [3.2 Message loop]
   * [ ] 3.3 File system
   * [ ] 3.4 Memory management
   * [ ] 3.5 Customize Module object
   * [ ] 3.6 Summary
 
-* Chapter 4 General techniques that WebAssembly friendly
-  * [ ] 4.1 Message loop detaching
-  * [ ] 4.2 Memory alignment
-  * [ ] 4.3 Exporting C++ objects using the C interface
-  * [ ] 4.4 Lifecycle control for C++ object
+* [Chapter 4 General techniques that WebAssembly friendly](ch4-techniques/readme.md)
+  * [x] [4.1 Message loop detaching](ch4-techniques/ch4-01-msg-loop-detach.md)
+  * [x] [4.2 Memory alignment](ch4-techniques/ch4-02-align.md)
+  * [x] [4.3 Exporting C++ objects using the C interface](ch4-techniques/ch4-03-export-obj.md)
+  * [x] [4.4 Lifecycle control for C++ object](ch4-techniques/ch4-04-obj-life-cycle.md)
   * [ ] 4.5 Importing JavaScript object using C interface
   * [ ] 4.6 Be careful with `int64`
   * [ ] 4.7 Forget about filesystem

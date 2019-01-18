@@ -24,11 +24,11 @@
   * 3.5 Customize Module object
   * 3.6 Summary
 
-* Chapter 4 General techniques that WebAssembly friendly
-  * 4.1 Message loop detaching
-  * 4.2 Memory alignment
-  * 4.3 Exporting C++ objects using the C interface
-  * 4.4 Lifecycle control for C++ object
+* [Chapter 4 General techniques that WebAssembly friendly](ch4-techniques/readme.md)
+  * [4.1 Message loop detaching](ch4-techniques/ch4-01-msg-loop-detach.md)
+  * [4.2 Memory alignment](ch4-techniques/ch4-02-align.md)
+  * [4.3 Exporting C++ objects using the C interface](ch4-techniques/ch4-03-export-obj.md)
+  * [4.4 Lifecycle control for C++ object](ch4-techniques/ch4-04-obj-life-cycle.md)
   * 4.5 Importing JavaScript object using C interface
   * 4.6 Be careful with `int64`
   * 4.7 Forget about filesystem
