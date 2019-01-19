@@ -63,7 +63,7 @@ int main() {
 
 ![](images/03-pack-file.png)
 
-`--preload-file`参数不仅可以打包单个文件，还可以打包整个目录，例如C代码文件`packdir.cc`所在目录下有一个名为`dat_dir.txt`的文件夹，其结构如下：
+`--preload-file`参数不仅可以打包单个文件，还可以打包整个目录，例如C代码文件`packdir.cc`所在目录下有一个名为`dat_dir`的文件夹，其结构如下：
 
 ```
 |--packdir.cc
