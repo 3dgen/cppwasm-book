@@ -48,20 +48,20 @@ JavaScript对象注入C环境后，仍然需要对其进行生命周期控制。
 		btn.ref_count = 1;
 		btn.button_id = button_counter++;
 		button_table[btn.button_id] = btn;
-	
+
 		document.getElementById("container").appendChild(btn);
 		return btn.button_id;
 	}
-	
+
 	function js_ButtonAddRef(button_id) {
 		if (!button_table[button_id]) return;
-		
+
 		button_table[button_id].ref_count++;
 	}
-	
+
 	function js_ButtonRelease(button_id) {
 		if (!button_table[button_id]) return -1;
-	
+
 		var btn = button_table[button_id];
 		btn.ref_count--;
 		var rc = btn.ref_count;
@@ -71,10 +71,10 @@ JavaScript对象注入C环境后，仍然需要对其进行生命周期控制。
 		}
 		return rc;
 	}
-	
+
 	function js_ButtonSetInnerHtml(button_id, name) {
 		if (!button_table[button_id]) return;
-		button_table[button_id].innerHTML = name;	
+		button_table[button_id].innerHTML = name;
 	}
 ```
 
@@ -87,12 +87,12 @@ JavaScript对象注入C环境后，仍然需要对其进行生命周期控制。
 mergeInto(LibraryManager.library, {
 	ButtonCreate: function () {
 		return js_ButtonCreate();
-    },
-	
+	},
+
 	ButtonAddRef: function (button_id) {
 		js_ButtonAddRef(button_id);
-    },
-	
+	},
+
 	ButtonRelease: function (button_id) {
 		return js_ButtonRelease(button_id);
 	},
@@ -146,11 +146,11 @@ emcc imp_obj.cpp --js-library pkg.js -o imp_obj.js
   <button onclick = Pop()>Pop</button>
 	<script>
 	......
-	
+
 	function Push(){
 		Module._PushButton();
 	}
-	
+
 	function Pop(){
 		Module._PopButton();
 	}

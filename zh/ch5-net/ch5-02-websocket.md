@@ -92,17 +92,17 @@ go run ws_echo.go
 	  console.log("ws.onopen");
 	  ws.send("Hello world!");
 	}
-	
+
 	ws.onmessage = function(e) {
 	  console.log("ws.onmessage: " + e.data);
 	  ws.close();
 	}
-	
+
 	ws.onclose = function(e) {
 	  console.log("ws.onclose");
- 	}
-    
-    ws.onerror = function(e) {
+	}
+
+	ws.onerror = function(e) {
 	  console.log("ws.onerror");
 	}
 ```
@@ -138,26 +138,26 @@ public:
 		m_ws = WSNew(url, (struct WS_CB*)this);
 	}
 	virtual ~CWSCallback(){}
-	
+
 	void OnOpen(){
 		printf("OnOpen\n");
 		WSSend(m_ws, "I love wasm!");
 	}
-	
+
 	void OnClose(){
 		printf("OnClose\n");
 	}
-	
+
 	void OnMessage(const char* data){
 		printf("OnMessage: %s\n", data);
 		WSDelete(m_ws);
 		m_ws = NULL;
 	}
-	
+
 	void OnError(){
 		printf("OnError\n");
 	}
-	
+
 	struct WS_WRAPPER *m_ws;
 };
 
@@ -196,14 +196,14 @@ CWSCallback wscb("ws://localhost:40001/ws_echo");
 ```js
 //pkg.js
 mergeInto(LibraryManager.library, {
-    WSNew: function (url, cb) {
-        return JS_WSNew(Pointer_stringify(url), cb);
-    },
+	WSNew: function (url, cb) {
+		return JS_WSNew(Pointer_stringify(url), cb);
+	},
 
-    WSSend: function (ws, data) {
-        return JS_WSSend(ws, Pointer_stringify(data));
-    },
-	
+	WSSend: function (ws, data) {
+		return JS_WSSend(ws, Pointer_stringify(data));
+	},
+
 	WSDelete: function (ws) {
 		return JS_WSDelete(ws);
 	}
@@ -215,7 +215,7 @@ mergeInto(LibraryManager.library, {
 ```js
 //ws_wrap.html
 	var g_NextWSID = 1;
-	var g_WSTable = [];	
+	var g_WSTable = [];
 	function JS_WSNew(url, cb) {
 		var ws = new WebSocket(url);
 		ws.onopen = function (e) { Module._WSOnOpen(cb); };
@@ -224,17 +224,17 @@ mergeInto(LibraryManager.library, {
 			Module.ccall('WSOnMessage', 'null', ['number', 'string'], [cb, e.data]);
 		};
 		ws.onerror = function (e) { Module._WSOnError(cb); };
-	
+
 		var wsid = g_NextWSID++;
 		g_WSTable[wsid] = ws;
 		return wsid;
 	}
-	
+
 	function JS_WSSend(ws, data) {
 		var ws = g_WSTable[ws];
 		ws.send(data);
 	}
-	
+
 	function JS_WSDelete(ws) {
 		var ws = g_WSTable[ws];
 		ws.close();

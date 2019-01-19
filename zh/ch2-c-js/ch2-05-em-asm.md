@@ -60,7 +60,7 @@ The answer is:42
 			console.log('sqrt(pi):', $1);
 		},
 		buf, sqrt(pi)
-    );
+	);
 ```
 
 上述代码将依次输出buf的地址以及pi的平方根。
@@ -82,7 +82,7 @@ The answer is:42
 ```c
 	EM_ASM_(
 		{
-            console.log('arguments count:', arguments.length);
+			console.log('arguments count:', arguments.length);
 			for(var i = 0; i < arguments.length; i++) {
 				console.log('$', i, ':', arguments[i]);
 			}

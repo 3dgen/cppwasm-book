@@ -1,4 +1,4 @@
-# 4.3 使用C接口导出C++对象 
+# 4.3 使用C接口导出C++对象
 
 在Emscripten中使用`Embind`和`WebIDL Binder`都可以将C++对象导出至JavaScript，但笔者在实际工程中并没有使用这两种方法，一方面是因为这些方法是侵入式的，另一方面更重要的是，笔者对于“是否应该使用C++类作为库接口”本身持保留态度——设计出一个糟糕的C++接口的可能性远高于设计出一个糟糕的C接口——当然这并不意味着反对使用C++，事实上C++是笔者日常使用的主力语言，只不过从接口设计的角度来说，笔者认为应该避免让C++类的复杂性溢出库边界，因此使用C接口导出C++对象就成了自然的选择。
 
@@ -22,7 +22,7 @@ public:
 		return m_nSum;
 	}
 private:
-	int m_nSum;	
+	int m_nSum;
 };
 ```
 
@@ -63,7 +63,7 @@ EM_PORT_API(int) Sum_Inc(struct Sum* sum, int i) {
 		var s = Module._Sum_New();
 		console.log(Module._Sum_Inc(s, 29));
 		Module._Sum_Delete(s);
-    }
+	}
 ```
 
 浏览页面后控制台输出如下：
@@ -88,7 +88,7 @@ class CTriangle : public CShape {
 public:
 	CTriangle() {}
 	virtual ~CTriangle() {}
-	
+
 	void WhatAreYou(){ printf("I'm a triangle.\n") ;}
 };
 
@@ -96,7 +96,7 @@ class CCircle : public CShape {
 public:
 	CCircle() {}
 	virtual ~CCircle() {}
-	
+
 	void WhatAreYou(){ printf("I'm a circle.\n") ;}
 };
 
@@ -132,10 +132,10 @@ EM_PORT_API(void) Shape_WhatAreYou(struct Shape* shape) {
 	Module.onRuntimeInitialized = function() {
 		var t = Module._Shape_New_Triangle();
 		Module._Shape_WhatAreYou(t);
-		
+
 		var c = Module._Shape_New_Circle();
 		Module._Shape_WhatAreYou(c);
-		
+
 		Module._Shape_Delete(t);
 		Module._Shape_Delete(c);
 	}

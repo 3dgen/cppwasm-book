@@ -39,6 +39,7 @@ a.out
 *.map
 
 book.pdf
+book_*.pdf
 
 # emcc
 *.out.js

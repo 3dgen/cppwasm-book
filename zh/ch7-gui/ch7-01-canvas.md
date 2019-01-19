@@ -17,8 +17,8 @@ int img_width = 0, img_height = 0;
 EM_PORT_API(uint8_t*) get_img_buf(int w, int h) {
 	if (img_buf == NULL || w != img_width || h != img_height) {
 		if (img_buf) {
-            free(img_buf);
-        }
+			free(img_buf);
+		}
 		img_buf = (uint8_t*)malloc(w * h * 4);
 		img_width = w;
 		img_height = h;
@@ -70,7 +70,7 @@ EM_PORT_API(void) draw_circle(int cx, int cy, int radii) {
       var buf_addr = Module._get_img_buf(400, 400);
       Module._draw_circle(200, 200, radii);
       radii += delta;
-      if (radii > 200 || radii < 0) delta = -delta;      
+      if (radii > 200 || radii < 0) delta = -delta;
 
       var u8o = new Uint8ClampedArray(Module.HEAPU8.subarray(buf_addr,
         buf_addr + 400 * 400 * 4));

@@ -98,7 +98,6 @@ void read_fs(const char* fname) {
 }
 
 void write_fs() {
-    
 	FILE* fp = fopen("t3.txt", "wt");
 	if (fp) {
 		fprintf(fp, "This is t3.txt.\n");
@@ -164,7 +163,7 @@ void setup_nodefs() {
 
 int main() {
 	setup_nodefs();
-	
+
 	FILE* fp = fopen("/data/nodefs_data.txt", "r+t");
 	if (fp == NULL) fp = fopen("/data/nodefs_data.txt", "w+t");
 	int count = 0;
@@ -223,7 +222,7 @@ EM_PORT_API(void) test() {
 		fprintf(fp, "%d", count);
 		fclose(fp);
 		printf("count:%d\n", count);
-		
+
 		sync_idbfs();
 	}
 	else {
@@ -240,7 +239,7 @@ int main() {
 			ccall('test', 'v');
 		});
 	);
-	
+
 	return 0;
 }
 ```

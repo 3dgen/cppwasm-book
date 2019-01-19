@@ -33,8 +33,8 @@ JavaScript对象`Module`控制了运行时相关的很多行为。在之前的�
 #include <stdio.h>
 
 int main() {
-    printf("你好，世界！\n");
-    return 0;
+	printf("你好，世界！\n");
+	return 0;
 }
 ```
 

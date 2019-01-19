@@ -71,11 +71,11 @@ emcc pi.cc --pre-js pre.js -o pi.js
     var worker = new Worker("pi.js");
     worker.onmessage = function(e) {
       console.log("mainThread: message from Worker:" + e.data);
-	  if (e.data == "Worker Ready."){
-		worker.postMessage(20000000);
-	  }
+      if (e.data == "Worker Ready."){
+        worker.postMessage(20000000);
+      }
     }
-	setInterval(function(){console.log("mainThread: timer()");}, 1000);
+    setInterval(function(){console.log("mainThread: timer()");}, 1000);
 ```
 
 这部分很简单，当收到"Worker Ready."确认`Worker`中的`Module`准备完毕后，发送任务参数`2000000`给`Worker`计算圆周率。
