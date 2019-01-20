@@ -54,13 +54,13 @@ However, the operating environment of WebAssembly is very different from the nat
   * [x] [2.7 Using `ccall`/`cwrap`](ch2-c-js/ch2-07-ccall-cwrap.md)
   * [x] [2.8 Supplement](ch2-c-js/ch2-08-ext.md)
 
-* Chapter 3 Emscripten runtime
-  * [x] [3.1 Runtime lifecycle]
-  * [x] [3.2 Message loop]
-  * [x] 3.3 File system
-  * [x] 3.4 Memory management
-  * [ ] 3.5 Customize Module object
-  * [ ] 3.6 Summary
+* [Chapter 3 Emscripten runtime](ch3-runtime/readme.md)
+  * [x] [3.1 Runtime lifecycle](ch3-runtime/ch3-01-main.md)
+  * [x] [3.2 Message loop](ch3-runtime/ch3-02-message-loop.md)
+  * [x] [3.3 File system](ch3-runtime/ch3-03-fs.md)
+  * [x] [3.4 Memory management](ch3-runtime/ch3-04-mem.md)
+  * [x] [3.5 Customize Module object](ch3-runtime/ch3-05-module.md)
+  * [x] [3.6 Summary](ch3-runtime/ch3-06-summary.md)
 
 * [Chapter 4 General techniques that WebAssembly friendly](ch4-techniques/readme.md)
   * [x] [4.1 Message loop detaching](ch4-techniques/ch4-01-msg-loop-detach.md)
