@@ -21,8 +21,8 @@
   * [3.2 Message loop](ch3-runtime/ch3-02-message-loop.md)
   * [3.3 File system](ch3-runtime/ch3-03-fs.md)
   * [3.4 Memory management](ch3-runtime/ch3-04-mem.md)
-  * 3.5 Customize Module object
-  * 3.6 Summary
+  * [3.5 Customize Module object](ch3-runtime/ch3-05-module.md)
+  * [3.6 Summary](ch3-runtime/ch3-06-summary.md)
 
 * [Chapter 4 General techniques that WebAssembly friendly](ch4-techniques/readme.md)
   * [4.1 Message loop detaching](ch4-techniques/ch4-01-msg-loop-detach.md)
