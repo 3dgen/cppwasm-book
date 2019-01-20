@@ -16,11 +16,11 @@
   * [2.7 Using `ccall`/`cwrap`](ch2-c-js/ch2-07-ccall-cwrap.md)
   * [2.8 Supplement](ch2-c-js/ch2-08-ext.md)
 
-* Chapter 3 Emscripten runtime
-  * 3.1 Runtime lifecycle
-  * 3.2 Message loop
-  * 3.3 File system
-  * 3.4 Memory management
+* [Chapter 3 Emscripten runtime](ch3-runtime/readme.md)
+  * [3.1 Runtime lifecycle](ch3-runtime/ch3-01-main.md)
+  * [3.2 Message loop](ch3-runtime/ch3-02-message-loop.md)
+  * [3.3 File system](ch3-runtime/ch3-03-fs.md)
+  * [3.4 Memory management](ch3-runtime/ch3-04-mem.md)
   * 3.5 Customize Module object
   * 3.6 Summary
 
