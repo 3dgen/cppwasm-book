@@ -55,10 +55,10 @@ However, the operating environment of WebAssembly is very different from the nat
   * [x] [2.8 Supplement](ch2-c-js/ch2-08-ext.md)
 
 * Chapter 3 Emscripten runtime
-  * [ ] [3.1 Runtime lifecycle]
-  * [ ] [3.2 Message loop]
-  * [ ] 3.3 File system
-  * [ ] 3.4 Memory management
+  * [x] [3.1 Runtime lifecycle]
+  * [x] [3.2 Message loop]
+  * [x] 3.3 File system
+  * [x] 3.4 Memory management
   * [ ] 3.5 Customize Module object
   * [ ] 3.6 Summary
 
