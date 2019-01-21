@@ -29,9 +29,9 @@
   * [4.2 Memory alignment](ch4-techniques/ch4-02-align.md)
   * [4.3 Exporting C++ objects using the C interface](ch4-techniques/ch4-03-export-obj.md)
   * [4.4 Lifecycle control for C++ object](ch4-techniques/ch4-04-obj-life-cycle.md)
-  * 4.5 Importing JavaScript object using C interface
-  * 4.6 Be careful with `int64`
-  * 4.7 Forget about filesystem
+  * [4.5 Importing JavaScript object using C interface](ch4-techniques/ch4-05-import-js-obj.md)
+  * [4.6 Be careful with `int64`](ch4-techniques/ch4-06-int64-issue.md)
+  * [4.7 Forget about filesystem](ch4-techniques/ch4-07-forget-about-fs.md)
 
 * Chapter 5 Network IO
   * 5.1 XMLHttpRequest
