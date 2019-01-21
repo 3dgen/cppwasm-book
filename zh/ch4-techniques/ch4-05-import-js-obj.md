@@ -78,7 +78,7 @@ JavaScript对象注入C环境后，仍然需要对其进行生命周期控制。
 	}
 ```
 
-`js_ButtonCreate()`用于在DOM中创建按钮，`js_ButtonAddRef()`/`js_ButtonRelease()`分别用于增减按钮的引用计数，`js_ButtonSetInnerHtml()`用于设置指定按钮的内部html内容。参照4.4.1节，这4个函数围绕按钮/ID表`button_table`工作。
+`js_ButtonCreate()`用于在DOM中创建按钮，`js_ButtonAddRef()`/`js_ButtonRelease()`分别用于增减按钮的引用计数，`js_ButtonSetInnerHtml()`用于设置指定按钮的内部html内容。参照4.5.1节，这4个函数围绕按钮/ID表`button_table`工作。
 
 然后我们使用2.2节的方法将这些方法注入到C环境中，导入库代码如下：
 
@@ -160,8 +160,6 @@ emcc imp_obj.cpp --js-library pkg.js -o imp_obj.js
 
 ![](images/05-obj-imp-log.png)
 
-创建按钮的调用顺序是：
+调用顺序如下图所示：
 
-JavaScript:`Push()`->JavaScript:`Module._PushButton()`->C:`PushButton()`->JavaScript:`ButtonCreate()`->JavaScript:`js_ButtonCreate()`
-
-其他调用类同。
+![](images/05-call-seq.png)

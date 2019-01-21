@@ -112,6 +112,6 @@ emcc int64_imp.cc --js-library pkg.js  -o int64_imp.js
 
 ![](images/06-int64-log3.png)
 
-## 4.6.4 小结
+## 4.6.3 小结
 
 由上述例子可见，由于JavaScript自身的缺陷，包含`int64`参数/返回值的C函数在Emscripten中导入导出时会发生意外的形变。 修改JavaScript标准，使其原生支持64位整型数的呼声一直很高，在这一天真的到来之前，笔者的建议是：尽量不要在JavaScript与C/C++之间交换`int64`。
