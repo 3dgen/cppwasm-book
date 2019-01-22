@@ -1,10 +1,10 @@
 # 5.1 XMLHttpRequest
 
-http协议是Web环境下最常用的传输协议，本节将介绍在Emscripten中使用`XMLHttpRequest`对象进行http数据传输。
+HTTP协议是Web环境下最常用的传输协议，本节将介绍在Emscripten中使用`XMLHttpRequest`对象进行HTTP数据传输。
 
 ## 5.1.1 XMLHttpRequest对象简介
 
-下列JavaScript代码是使用`XMLHttpRequest`对象获取http数据的例子：
+下列JavaScript代码是使用`XMLHttpRequest`对象获取HTTP数据的例子：
 
 ```js
 	var request = new XMLHttpRequest();
@@ -31,9 +31,9 @@ http协议是Web环境下最常用的传输协议，本节将介绍在Emscripten
 
 ## 5.1.2 `XMLHttpRequest`对象的C接口封装
 
-为了避免UI挂起，通常情况下我们使用异步模式发起http请求，因此`XMLHttpRequest`对象的C封装接口分为两个部分：
+为了避免UI挂起，通常情况下我们使用异步模式发起HTTP请求，因此`XMLHttpRequest`对象的C封装接口分为两个部分：
 
-1. 由JavaScript实现，供C调用。包括创建`XMLHttpRequest`对象、发起http请求等主动行为；
+1. 由JavaScript实现，供C调用。包括创建`XMLHttpRequest`对象、发起HTTP请求等主动行为；
 1. 由C实现，供JavaScript调用。包括各种事件的回调。
 
 来看C部分的代码：
@@ -106,11 +106,11 @@ emcc  xhr_wrap1.cpp --js-library pkg1.js -s "EXTRA_EXPORTED_RUNTIME_METHODS=['cc
 
 ![](images/01-xhr-wrap1.png)
 
-可以看到程序正确的处理了返回值，并且**由于使用了异步http请求，返回的顺序与请求的顺序并不一致**。
+可以看到程序正确的处理了返回值，并且**由于使用了异步HTTP请求，返回的顺序与请求的顺序并不一致**。
 
 ## 5.1.3 扩展回调处理
 
-有时候我们在C++中有多个对象都需要发起http请求，而每个对象处理http返回的方式各不相同，此时5.1.2节中的封装方法将无法满足需要。因此，我们需要参考4.3节的方法对封装进行改进，C代码如下：
+有时候我们在C++中有多个对象都需要发起HTTP请求，而每个对象处理HTTP返回的方式各不相同，此时5.1.2节中的封装方法将无法满足需要。因此，我们需要参考4.3节的方法对封装进行改进，C代码如下：
 
 ```c
 //xhr_wrap2.cpp
@@ -215,7 +215,7 @@ mergeInto(LibraryManager.library, {
 	}
 ```
 
-以上代码的核心思想在于：我们为每个`XHRGet()`请求绑定了一个回调处理对象`cb`，当http请求完成时，将调用绑定的`cb`对象用于处理事件。
+以上代码的核心思想在于：我们为每个`XHRGet()`请求绑定了一个回调处理对象`cb`，当HTTP请求完成时，将调用绑定的`cb`对象用于处理事件。
 
 使用以下命令编译：
 

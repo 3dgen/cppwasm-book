@@ -1,10 +1,10 @@
 # 5.1 XMLHttpRequest
 
-The http protocol is the most commonly used transport protocol in web page. This section describes the use of the `XMLHttpRequest` object in Emscripten for data transfer.
+The HTTP protocol is the most commonly used transport protocol in web page. This section describes the use of the `XMLHttpRequest` object in Emscripten for data transfer.
 
 ## 5.1.1 Introduction to `XMLHttpRequest` object
 
-The following JavaScript code is an example of getting http data using the `XMLHttpRequest` object:
+The following JavaScript code is an example of getting HTTP data using the `XMLHttpRequest` object:
 
 ```js
 	var request = new XMLHttpRequest();
@@ -31,9 +31,9 @@ The code above creates an `XMLHttpRequest` object `request`, uses the asynchrono
 
 ## 5.1.2 Wrapping `XMLHttpRequest` object using C API
 
-In order to avoid the UI hang, we usually use the asynchronous mode to initiate the http request, so the C API of the `XMLHttpRequest` object is divided into two parts:
+In order to avoid the UI hang, we usually use the asynchronous mode to initiate the HTTP request, so the C API of the `XMLHttpRequest` object is divided into two parts:
 
-1. Functions that called by C, implemented by JavaScript. Including the creation of the `XMLHttpRequest` object, the initiation of http requests etc.
+1. Functions that called by C, implemented by JavaScript. Including the creation of the `XMLHttpRequest` object, the initiation of HTTP requests etc.
 1. Functions that called by JavaScript, implemented by C. Includes callback functions for various events.
 
 C code:
@@ -102,15 +102,15 @@ Compile with the following command:
 emcc  xhr_wrap1.cpp --js-library pkg1.js -s "EXTRA_EXPORTED_RUNTIME_METHODS=['ccall']" -o xhr_wrap1.js
 ```
 
-Browse the page, the console output:
+Browse the page, the console outputs:
 
 ![](images/01-xhr-wrap1.png)
 
-It can be seen that the program correctly processed the return value, and **because the asynchronous http request is used, the order of return is not consistent with the order of the request**.
+It can be seen that the program correctly processed the return value, and **because the asynchronous HTTP request is used, the order of return is not consistent with the order of the request**.
 
 ## 5.1.3 Extending callback
 
-Sometimes we have multiple objects in C++ that need to initiate http requests, and each object handles return value in differently way. At this time, the wrap method in Section 5.1.2 will not meet the needs. Therefore, we need to improve it by referring to the method in Section 4.3. The C code is as follows:
+Sometimes we have multiple objects in C++ that need to initiate HTTP requests, and each object handles return value in differently way. At this time, the wrap method in Section 5.1.2 will not meet the needs. Therefore, we need to improve it by referring to the method in Section 4.3. The C code is as follows:
 
 ```c
 //xhr_wrap2.cpp
@@ -217,7 +217,7 @@ JavaScript code:
 	}
 ```
 
-The core idea of the above code is that we bind a callback handler object `cb` for each `XHRGet()` request. When the http request is completed, the bound `cb` object will be called to handle the event.
+The core idea of the above code is that we bind a callback handler object `cb` for each `XHRGet()` request. When the HTTP request is completed, the bound `cb` object will be called to handle the event.
 
 Compile with the following command:
 
