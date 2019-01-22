@@ -15,7 +15,7 @@ This section will use the techniques in sections 7.1 through 7.3 to write a comp
 
 ## 7.4.2 Design requirements
 
-We will implement the `Life` game on the webpage, hopefully it has the following features:
+We will implement the *Life* game on the webpage, hopefully it has the following features:
 
 1. The status of all cells can be set randomly through keyboard shortcuts;
 1. Pause/resume game running at any time via keyboard shortcuts;
@@ -56,7 +56,7 @@ EM_PORT_API(void) init_env(int w, int h, int s) {
 	create_seeds();
 }
 ```
-- In `Life`, since the generations are isolated from each other, we allocated two buffers `cells0` and `cells1`;
+- In *Life*, since the generations are isolated from each other, we allocated two buffers `cells0` and `cells1`;
 - `img_buf` is the image buffer that is finally output to `Canvas`. Since 1 pixel is very small on the screen, we set the stretch factor `scale`, and 1 cell will occupy `scale * scale` pixels in the image.
 - The export function `init_env()` is used to initialize each buffer used internally and save parameters such as grid length and width;
 - The `create_seeds()` function is used for random initialization of all cell states.
