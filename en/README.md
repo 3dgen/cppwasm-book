@@ -81,11 +81,11 @@ However, the operating environment of WebAssembly is very different from the nat
   * [ ] 6.2 Example
   <!--* [ ] 6.3 A simple framework for multithreading-->
 
-* Chapter 7 GUI
-  * [ ] 7.1 canvas
-  * [ ] 7.2 Mouse event
-  * [ ] 7.3 Keyboard event
-  * [ ] 7.4 Life
+* [Chapter 7 GUI](ch7-gui/readme.md)
+  * [x] [7.1 Canvas](ch7-gui/ch7-01-canvas.md)
+  * [x] [7.2 Mouse events](ch7-gui/ch7-02-mouse.md)
+  * [x] [7.3 Keyboard events](ch7-gui/ch7-03-keyboard.md)
+  * [x] [7.4 Conway's Game of Life](ch7-gui/ch7-04-life.md)
 
 <!--* Chapter 8 Project management
   * [ ] 8.1 Using Makefile
