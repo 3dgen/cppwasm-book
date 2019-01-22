@@ -78,7 +78,7 @@ However, the operating environment of WebAssembly is very different from the nat
 
 * [Chapter 6 Multithreading](ch6-threads/readme.md)
   * [x] [6.1 Multithreading in JavaScript](ch6-threads/ch6-01-worker.md)
-  * [x] [6.2 Using Emscripten in Web Worker](ch6-02-sample.md5)
+  * [x] [6.2 Using Emscripten in Web Worker](ch6-threads/ch6-02-sample.md5)
   <!--* [ ] 6.3 A simple framework for multithreading-->
 
 * [Chapter 7 GUI](ch7-gui/readme.md)

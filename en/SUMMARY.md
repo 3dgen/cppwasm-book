@@ -39,7 +39,7 @@
 
 * [Chapter 6 Multithreading](ch6-threads/readme.md)
   * [6.1 Multithreading in JavaScript](ch6-threads/ch6-01-worker.md)
-  * [6.2 Using Emscripten in Web Worker](ch6-02-sample.md5)
+  * [6.2 Using Emscripten in Web Worker](ch6-threads/ch6-02-sample.md5)
 
 * [Chapter 7 GUI](ch7-gui/readme.md)
   * [7.1 Canvas](ch7-gui/ch7-01-canvas.md)
