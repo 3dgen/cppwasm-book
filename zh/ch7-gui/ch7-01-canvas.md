@@ -1,11 +1,11 @@
 # 7.1 Canvas
 
-Canvas对象与Windows系统中的DC对象很相似，它是屏幕上的一块矩形区域，提供了划线、填充、字符输出等一系列操作，最重要的是，它可以直接读写区域中任意像素的RGBA值，这使得我们可以在Canvas上绘制任意图像。
+`Canvas`对象与Windows系统中的DC对象很相似，它是屏幕上的一块矩形区域，提供了划线、填充、字符输出等一系列操作，最重要的是，它可以直接读写区域中任意像素的RGBA值，这使得我们可以在`Canvas`上绘制任意图像。
 
-本节的例程创建包含了一个Canvas的页面，Canvas上将绘制一个直径周而复始变大变小的红色的圆。其中：
+本节的例程创建包含了一个`Canvas`的页面，`Canvas`上将绘制一个直径周而复始变大变小的红色的圆。其中：
 
 - C代码负责图像数据的管理以及圆的绘制；
-- JavaScript代码负责图像数据向Canvas的更新及动画调度。
+- JavaScript代码负责图像数据向`Canvas`的更新及动画调度。
 
 C代码如下：
 
@@ -86,7 +86,7 @@ EM_PORT_API(void) draw_circle(int cx, int cy, int radii) {
     <script src="canvas.js"></script>
 ```
 
-html中声明了id为`myCanvas`的Canvas元素，在每帧更新时，从Emscripten运行时`Module`中取出图像数据，创建ImageData对象`imgData`，并将`imgData`通过CanvasRenderingContext2D对象'ctx'更新到Canvas上去。整体的数据流程如下图所示：
+html中声明了id为`myCanvas`的`Canvas`元素，在每帧更新时，从Emscripten运行时`Module`中取出图像数据，创建`ImageData`对象`imgData`，并将`imgData`通过`CanvasRenderingContext2D`对象`ctx`更新到`Canvas`上去。整体的数据流程如下图所示：
 
 ![](images/01-flow.png)
 
@@ -100,4 +100,4 @@ emcc canvas.cc -o canvas.js
 
 ![](images/01-page.png)
 
-事实上Canvas对象已经内置包括圆、矩形、扇形等多种几何图形的绘制方法，上述例程使用自定义的`draw_circle()`函数更多是为了演示在如何在C语言中操作位图图像，以及如何提取图像并更新到Canvas。Canvas、ImageData、CanvasRenderingContext2D等相关对象的详细资料，可参考MDN。
+事实上`Canvas`对象已经内置包括圆、矩形、扇形等多种几何图形的绘制方法，上述例程使用自定义的`draw_circle()`函数更多是为了演示在如何在C语言中操作位图图像，以及如何提取图像并更新到`Canvas`。`Canvas`、`ImageData`、`CanvasRenderingContext2D`等相关对象的详细资料，可参考MDN。
