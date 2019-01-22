@@ -23,17 +23,17 @@ http协议是Web环境下最常用的传输协议，本节将介绍在Emscripten
 	request.send();
 ```
 
-上述代码创建了一个`XMLHttpRequest`对象`request`，使用异步`GET`方法获取远端“t1.txt”的数据，并通过设置的`onreadystatechange`回调事件打印获取到的字符串。浏览页面，控制台输出如下：
+上述代码创建了一个`XMLHttpRequest`对象`request`，使用异步`GET`方法获取远端*t1.txt*的数据，并通过设置的`onreadystatechange`回调事件打印获取到的字符串。浏览页面，控制台输出如下：
 
 ![](images/01-xhr-js.png)
 
 > **info**  关于`XMLHttpRequest`的更多详细资料，可参考[https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest)
 
-## 5.1.2 XMLHttpRequest对象的C接口封装
+## 5.1.2 `XMLHttpRequest`对象的C接口封装
 
-为了避免UI挂起，通常情况下我们使用异步模式发起http请求，因此XMLHttpRequest对象的C封装接口分为两个部分：
+为了避免UI挂起，通常情况下我们使用异步模式发起http请求，因此`XMLHttpRequest`对象的C封装接口分为两个部分：
 
-1. 由JavaScript实现，供C调用。包括创建XMLHttpRequest对象、发起http请求等主动行为；
+1. 由JavaScript实现，供C调用。包括创建`XMLHttpRequest`对象、发起http请求等主动行为；
 1. 由C实现，供JavaScript调用。包括各种事件的回调。
 
 来看C部分的代码：
