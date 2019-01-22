@@ -6,7 +6,7 @@
 
 ```c
 //pi.cc
-double Rondom()
+double Random()
 {
 	static int seed = 1;
 	static int const a = 16807, m = 2147483647, q = 127773, r = 2836;
@@ -24,8 +24,8 @@ EM_PORT_API(double) Pi(int trials)
 		int hits = 0;
 		for (int i = 0; i < trials; i++)
 		{
-			double x = Rondom();
-			double y = Rondom();
+			double x = Random();
+			double y = Random();
 			if (x * x + y * y < 1.0)
 				hits++;
 		}
