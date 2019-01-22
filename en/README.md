@@ -71,10 +71,10 @@ However, the operating environment of WebAssembly is very different from the nat
   * [x] [4.6 Be careful with `int64`](ch4-techniques/ch4-06-int64-issue.md)
   * [x] [4.7 Forget about filesystem](ch4-techniques/ch4-07-forget-about-fs.md)
 
-* Chapter 5 Network IO
-  * [ ] 5.1 XMLHttpRequest
-  * [ ] 5.2 WebSocket
-  * [ ] 5.3 fetch
+* [Chapter 5 Network IO](ch5-net/readme.md)
+  * [x] [5.1 XMLHttpRequest](ch5-net/ch5-01-http.md)
+  * [x] [5.2 WebSocket](ch5-net/ch5-02-websocket.md)
+  <!--* [ ] 5.3 fetch-->
 
 * Chapter 6 Multithreading
   * [ ] 6.1 Multithreading in JavaScript
