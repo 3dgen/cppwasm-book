@@ -27,7 +27,7 @@ The code above creates an `XMLHttpRequest` object `request`, uses the asynchrono
 
 ![](images/01-xhr-js.png)
 
-> **info**  For more details about `XMLHttpRequest`, please refer to[https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest)
+> **info**  For more details about `XMLHttpRequest`, please refer to[https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
 
 ## 5.1.2 Wrapping `XMLHttpRequest` object using C API
 
