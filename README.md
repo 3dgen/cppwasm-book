@@ -13,6 +13,7 @@
 - Translator: yushih, Github [@yushih](https://github.com/yushih)
 - Repo: https://github.com/3dgen/cppwasm-book
 
+----
 
 # C/C++面向WebAssembly编程
 
