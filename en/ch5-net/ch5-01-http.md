@@ -36,7 +36,7 @@ In order to avoid the UI hang, we usually use the asynchronous mode to initiate 
 1. Functions that called by C, implemented by JavaScript. Including the creation of the `XMLHttpRequest` object, the initiation of HTTP requests etc.
 1. Functions that called by JavaScript, implemented by C. Includes callback functions for various events.
 
-C code:
+Let's look at the C code first:
 
 ```c
 //xhr_wrap1.cpp
