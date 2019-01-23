@@ -1,0 +1,20 @@
+{
+	"gitbook": "3.x",
+	"title": "WebAssembly friendly programming with C/C++",
+	"description": "WebAssembly friendly programming with C/C++ -- Emscripten practice",
+	"language": "en",
+
+	"structure": {
+		"readme": "preface.md"
+	},
+
+	"pluginsConfig": {
+		"theme-default": {
+			"showLevel": false
+		}
+	},
+
+	"plugins": [
+		"-search"
+	]
+}

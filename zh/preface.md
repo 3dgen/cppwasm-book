@@ -1,6 +1,6 @@
 # C/C++面向WebAssembly编程
 
-本书介绍了在工程化应用中使用C/C++进行WebAssembly开发的方法。关于WebAssembly的基础知识可以参考《WebAssembly标准入门》。
+本书介绍了在工程化应用中使用C/C++进行WebAssembly开发的方法。关于WebAssembly的基础知识可以参考[《WebAssembly标准入门》](https://github.com/chai2010/awesome-wasm-zh/blob/master/webassembly-primer.md)。
 
 ![](cover.png)
 
@@ -13,7 +13,7 @@
 
 ## 在线阅读
 
-- https://3dgen.cn/cppwasm-book
+- https://3dgen.cn/cppwasm-book/zh
 
 
 ## 关注微信公众号 (wasm-hackers) 或 QQ群 (726475047)
