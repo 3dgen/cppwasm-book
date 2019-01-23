@@ -11,7 +11,7 @@ EM_PORT_API(int) show_me_the_answer() {
 }
 
 int main() {
-	printf("Hello, World！\n");
+	printf("你好，世界！\n");  //"你好，世界！" means "Hello, wolrd!" in chinese
 	return 0;
 }
 ```
@@ -36,7 +36,7 @@ HTML:
   </body>
 ```
 
-Upon loading the page, `main()` is executed, as you can see the "Hello, World !" output to the console:
+Upon loading the page, `main()` is executed, as you can see the "你好，世界！"(which means "Hello, wolrd!" in chinese) output to the console:
 
 ![](images/01-output-1.png)
 
