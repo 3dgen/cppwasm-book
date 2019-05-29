@@ -27,4 +27,8 @@
 # Community
 QQ Group: 726475047
 
+## 关注微信公众号 (guanggu-coder)
+
+![](https://raw.githubusercontent.com/chai2010/advanced-go-programming-book/master/weixin-guanggu-coder-logo.png)
+
 # License
