@@ -29,12 +29,10 @@
 # Community
 QQ Group: 726475047
 
-## 加入微信群
-
-![](https://chai2010.cn/static-images/weixin-wasm.jpg)
-
 ## 关注微信公众号 (guanggu-coder)
 
 ![](https://raw.githubusercontent.com/chai2010/advanced-go-programming-book/master/weixin-guanggu-coder-logo.png)
+
+加入微信群：从公众号底部菜单扫码二维码进群！
 
 # License
