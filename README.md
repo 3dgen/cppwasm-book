@@ -1,3 +1,5 @@
+*推广: 欢迎关注 [网易云课堂·光谷码农课堂](https://study.163.com/provider/480000001914454/index.htm)*
+
 *推广: [《WebAssembly标准入门》开始预售了，欢迎关注！](https://github.com/chai2010/awesome-wasm-zh/blob/master/webassembly-primer.md)([京东购买](https://item.jd.com/12499372.html))*
 
 ----
@@ -26,5 +28,11 @@
 
 # Community
 QQ Group: 726475047
+
+## 关注微信公众号 (guanggu-coder)
+
+![](https://raw.githubusercontent.com/chai2010/advanced-go-programming-book/master/weixin-guanggu-coder-logo.png)
+
+加入微信群：从公众号底部菜单扫码二维码进群！
 
 # License
