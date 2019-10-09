@@ -1,4 +1,4 @@
-#Summary
+# Summary
 
 * [Chapter 1 Getting started with Emscripten](ch1-quick-guide/readme.md)
   * [1.1 Installing Emscripten](ch1-quick-guide/ch1-01-install.md)

@@ -1,4 +1,4 @@
-#  WebAssembly friendly programming with C/C++
+# WebAssembly friendly programming with C/C++
 
 This book introduces the use of C/C++ for WebAssembly development. For the basics of WebAssembly, please refer to the "WebAssembly Primer"(Simplified Chinese), the sale address:
 

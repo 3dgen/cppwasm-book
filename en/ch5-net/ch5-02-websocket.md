@@ -116,7 +116,7 @@ The code above creates a WebSocket connection to `ws://localhost:40001/ws_echo`.
 Similar to the wrapping method of `XMLHttpRequest` described in Section 5.1, the C interface of a WebSocket object is divided into two parts:
 
 1. Functions that called by C, implemented by JavaScript. Including the creation of WebSocket objects, sending data etc.
-1. Functions that called by JavaScript, implemented by C. Includes callbacks for various events
+1. Functions that called by JavaScript, implemented by C. Includes callbacks for various events.
 
 C code:
 
