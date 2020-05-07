@@ -1,1 +1,0 @@
-This is dat_dir/sub_dir/t3.txt.
