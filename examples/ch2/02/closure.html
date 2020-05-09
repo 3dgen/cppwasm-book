@@ -1,0 +1,26 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Emscripten:Implement C API in JS</title>
+  </head>
+  <body>
+    <script>
+    function f1(){
+      var answer = 42;
+      function f2() {
+        return answer;
+      }
+      return f2;
+    }
+    var jsShowMeTheAnswer = f1();
+
+    Module = {};
+    Module.onRuntimeInitialized = function() {
+      Module._func();
+    }
+    </script>
+    <script src="closure.js"></script>
+  </body>
+</html>

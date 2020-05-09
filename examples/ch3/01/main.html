@@ -1,0 +1,22 @@
+<!doctype html>
+
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>Emscripten:main</title>
+  </head>
+  <body>
+	<button id = btn_test onclick=Test() disabled = true>test</button>
+	<script>
+	function Test(){
+		console.log(Module._show_me_the_answer());
+	}	
+	Module = {};
+	Module.onRuntimeInitialized = function() {
+		var btn = document.getElementById("btn_test");
+		btn.disabled = false;
+	}
+	</script>
+	<script src="main.js"></script>
+  </body>
+</html>

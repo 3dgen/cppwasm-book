@@ -1,0 +1,35 @@
+<!doctype html>
+
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>Emscripten:xhr_wrap1</title>
+  </head>
+  <body>
+	<script>
+	function JS_XHRGet(url, cb) {
+		var request = new XMLHttpRequest();
+		request.open("GET", url, true);
+		request.responseType = "text";	
+		request.url = url;
+		request.wrap_cb = cb;
+		request.onreadystatechange = function(){
+			if (request.readyState == 4) {
+				if (request.status == 200) {
+					Module.ccall('XHROnMessage', 'null',
+						['string', 'string', 'number'],
+						[request.url, request.responseText, request.wrap_cb]);
+				}
+				else{
+					Module.ccall('XHROnError', 'null',
+						['string', 'number', 'number'],
+						[request.url, request.status, request.wrap_cb]);
+				}
+			}
+		};
+		request.send();
+	}
+	</script>
+	<script src="xhr_wrap2.js"></script>
+  </body>
+</html>

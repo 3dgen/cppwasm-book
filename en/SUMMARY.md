@@ -1,0 +1,48 @@
+# Summary
+
+* [Chapter 1 Getting started with Emscripten](ch1-quick-guide/readme.md)
+  * [1.1 Installing Emscripten](ch1-quick-guide/ch1-01-install.md)
+  * [1.2 Hello, world!](ch1-quick-guide/ch1-02-helloworld.md)
+  * [1.3 Taking a look at the Emscripten glue code](ch1-quick-guide/ch1-03-glue-code.md)
+  * [1.4 Selecting compilation target](ch1-quick-guide/ch1-04-compile.md)
+
+* [Chapter 2 Connecting C and JavaScript](ch2-c-js/readme.md)
+  * [2.1 Calling compiled C functions from JavaScript](ch2-c-js/ch2-01-js-call-c.md)
+  * [2.2 Implement C API in JavaScript](ch2-c-js/ch2-02-implement-c-api-in-js.md)
+  * [2.3 Memory model](ch2-c-js/ch2-03-mem-model.md)
+  * [2.4 Exchange data between C and JavaScript](ch2-c-js/ch2-04-data-exchange.md)
+  * [2.5 Using `EM_ASM`](ch2-c-js/ch2-05-em-asm.md)
+  * [2.6 Using `emscripten_run_script`](ch2-c-js/ch2-06-run-script.md)
+  * [2.7 Using `ccall`/`cwrap`](ch2-c-js/ch2-07-ccall-cwrap.md)
+  * [2.8 Supplement](ch2-c-js/ch2-08-ext.md)
+
+* [Chapter 3 Emscripten runtime](ch3-runtime/readme.md)
+  * [3.1 Runtime lifecycle](ch3-runtime/ch3-01-main.md)
+  * [3.2 Message loop](ch3-runtime/ch3-02-message-loop.md)
+  * [3.3 File system](ch3-runtime/ch3-03-fs.md)
+  * [3.4 Memory management](ch3-runtime/ch3-04-mem.md)
+  * [3.5 Customize Module object](ch3-runtime/ch3-05-module.md)
+  * [3.6 Summary](ch3-runtime/ch3-06-summary.md)
+
+* [Chapter 4 General techniques that WebAssembly friendly](ch4-techniques/readme.md)
+  * [4.1 Message loop detaching](ch4-techniques/ch4-01-msg-loop-detach.md)
+  * [4.2 Memory alignment](ch4-techniques/ch4-02-align.md)
+  * [4.3 Exporting C++ objects using the C interface](ch4-techniques/ch4-03-export-obj.md)
+  * [4.4 Lifecycle control for C++ object](ch4-techniques/ch4-04-obj-life-cycle.md)
+  * [4.5 Importing JavaScript object using C interface](ch4-techniques/ch4-05-import-js-obj.md)
+  * [4.6 Be careful with `int64`](ch4-techniques/ch4-06-int64-issue.md)
+  * [4.7 Forget about filesystem](ch4-techniques/ch4-07-forget-about-fs.md)
+
+* [Chapter 5 Network IO](ch5-net/readme.md)
+  * [5.1 XMLHttpRequest](ch5-net/ch5-01-http.md)
+  * [5.2 WebSocket](ch5-net/ch5-02-websocket.md)
+
+* [Chapter 6 Multithreading](ch6-threads/readme.md)
+  * [6.1 Multithreading in JavaScript](ch6-threads/ch6-01-worker.md)
+  * [6.2 Using Emscripten in Web Worker](ch6-threads/ch6-02-sample.md)
+
+* [Chapter 7 GUI](ch7-gui/readme.md)
+  * [7.1 Canvas](ch7-gui/ch7-01-canvas.md)
+  * [7.2 Mouse events](ch7-gui/ch7-02-mouse.md)
+  * [7.3 Keyboard events](ch7-gui/ch7-03-keyboard.md)
+  * [7.4 Conway's Game of Life](ch7-gui/ch7-04-life.md)

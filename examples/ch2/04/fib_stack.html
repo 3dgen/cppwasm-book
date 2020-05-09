@@ -1,0 +1,17 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Emscripten:Fibonacci_stack</title>
+  </head>
+  <body>
+    <script>
+    Module = {};
+    Module.onRuntimeInitialized = function() {
+      Module._fibonacci20();
+    }
+    </script>
+    <script src="fib_stack.js"></script>
+  </body>
+</html>
