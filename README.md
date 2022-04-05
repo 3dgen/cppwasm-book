@@ -4,6 +4,16 @@
 
 ----
 
+# 《面向WebAssembly编程》已出版
+
+![](cover.jpg)
+
+- 京东：https://item.jd.com/13045744.html
+- 当当：http://product.dangdang.com/29168336.html
+- 豆瓣：https://book.douban.com/subject/35284009/
+
+----
+
 # WebAssembly friendly programming with C/C++
 
 ![](en/cover.png)
