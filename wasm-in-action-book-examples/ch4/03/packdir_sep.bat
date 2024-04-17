@@ -1,0 +1,1 @@
+emcc packdir.cc -o packdir_sep.js -s FORCE_FILESYSTEM=1

@@ -1,0 +1,52 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Emscripten:Canvas mouse&keyboard event</title>
+  </head>
+  <body>
+    <canvas id="myCanvas" tabindex="0"></canvas>
+    <script>
+    Module = {};
+    Module.onRuntimeInitialized = function() {
+      var image=new Image();
+      image.src="cover.png";
+      image.onload=function() {
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext("2d");
+        canvas.width = image.width;
+        canvas.height = image.height;
+        ctx.drawImage(image, 0, 0);
+        var img_data = ctx.getImageData(0, 0, image.width, image.height).data;
+
+        var buf_addr = Module._get_img_buf(image.width, image.height);
+        Module.HEAPU8.set(img_data, buf_addr);  //copy img_data to Emscripten
+
+        canvas.addEventListener("mousemove", onMouseMove, true);
+		canvas.addEventListener("keydown", onKeyDown, true);
+		canvas.focus();
+	  }
+    }
+
+    function getPointOnCanvas(canvas, x, y) {
+      var bbox = canvas.getBoundingClientRect();
+      return {
+        x: x - bbox.left * (canvas.width / bbox.width),
+        y: y - bbox.top * (canvas.height / bbox.height)
+      };    
+    }
+
+    function onMouseMove(event) {
+      var canvas = document.getElementById('myCanvas');
+      var loc = getPointOnCanvas(canvas, event.clientX, event.clientY);
+      Module._on_mouse_move(loc.x, loc.y);
+    }
+	
+	function onKeyDown(event) {
+	  Module.ccall('on_key_down', 'null', ['string'], [event.key]);
+	}
+    </script>
+    <script src="canvas_mk_event.js"></script>
+  </body>
+</html>

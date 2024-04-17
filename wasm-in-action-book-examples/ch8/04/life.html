@@ -1,0 +1,62 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Emscripten:Life</title>
+  </head>
+  <body>
+    <canvas id="myCanvas" tabindex="0"></canvas>
+    <p id = 'tip'>Loading WebAssembly...</p>
+    <script>
+    Module = {};
+    Module.onRuntimeInitialized = function() {
+      var canvas = document.getElementById('myCanvas');
+      var ctx = canvas.getContext("2d");
+      canvas.width = 512;
+      canvas.height = 512;
+      Module._init_env(256, 256, 2);
+
+      canvas.addEventListener("click", onMouseClick, true);
+      canvas.addEventListener("keyup", onKeyUp, true);
+      canvas.focus();
+
+      window.requestAnimationFrame(update);
+      var tip = document.getElementById('tip');
+      tip.innerHTML = "Press 'p' to pause/resume, 'r' to reset. Click cell to invert it's state while pausing.";
+    }
+
+    function update() {
+      var buf_addr = Module._step();
+      var u8o = new Uint8ClampedArray(Module.HEAPU8.subarray(buf_addr,
+        buf_addr + 512 * 512 * 4));
+      var imgData = new ImageData(u8o, 512, 512);
+
+      var canvas = document.getElementById('myCanvas');
+      var ctx = canvas.getContext('2d');
+      ctx.putImageData(imgData, 0, 0);
+
+      window.requestAnimationFrame(update);
+    }
+
+    function getPointOnCanvas(canvas, x, y) {
+      var bbox = canvas.getBoundingClientRect();
+      return {
+        x: x - bbox.left * (canvas.width / bbox.width),
+        y: y - bbox.top * (canvas.height / bbox.height)
+      };    
+    }
+
+    function onMouseClick(event) {
+      var canvas = document.getElementById('myCanvas');
+      var loc = getPointOnCanvas(canvas, event.clientX, event.clientY);
+      Module._on_mouse_click(loc.x, loc.y);
+    }
+	
+	  function onKeyUp(event) {
+      Module.ccall('on_key_up', 'null', ['string'], [event.key]);
+    }
+    </script>
+    <script src="life.js"></script>
+  </body>
+</html>

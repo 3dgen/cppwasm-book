@@ -1,0 +1,23 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Emscripten:JS alloc mem</title>
+  </head>
+  <body>
+    <script>
+    Module = {};
+    Module.onRuntimeInitialized = function() {
+      var count = 50;
+      var ptr = Module._malloc(4 * count);
+      for (var i = 0; i < count; i++){
+        Module.HEAP32[ptr / 4 + i] = i + 1;
+      }
+      console.log(Module._sum(ptr, count));
+      Module._free(ptr);
+    }
+    </script>
+    <script src="sum.js"></script>
+  </body>
+</html>

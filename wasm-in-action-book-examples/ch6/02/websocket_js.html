@@ -1,0 +1,30 @@
+<!doctype html>
+
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>Emscripten:websocket_js</title>
+  </head>
+  <body>
+	<script>
+	var ws = new WebSocket("ws://localhost:40001/ws_echo");
+	ws.onopen = function(e) {
+	  console.log("ws.onopen");
+	  ws.send("Hello world!");
+	}
+	
+	ws.onmessage = function(e) {
+	  console.log("ws.onmessage: " + e.data);
+	  ws.close();
+	}
+	
+	ws.onclose = function(e) {
+	  console.log("ws.onclose");
+	}
+	
+	ws.onerror = function(e) {
+	  console.log("ws.onerror");
+	}
+	</script>
+  </body>
+</html>

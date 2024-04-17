@@ -1,0 +1,8 @@
+# 版权 @2020 柴树杉。
+
+[package]
+name = "hello-c"
+version = "0.1.0"
+build = "build.rs"
+
+[dependencies]

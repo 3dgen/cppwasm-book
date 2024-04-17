@@ -1,0 +1,9 @@
+[package]
+name = "hello-lib"
+version = "0.1.0"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wee_alloc = "0.4.5"

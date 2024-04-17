@@ -1,0 +1,13 @@
+[package]
+name = "tuxsay"
+version = "0.1.0"
+description = ""
+license = "MIT"
+
+[[module]]
+name = "tuxsay-module"
+source = "a.out.wasm"
+
+[[command]]
+name = "tuxsay"
+module = "tuxsay-module"

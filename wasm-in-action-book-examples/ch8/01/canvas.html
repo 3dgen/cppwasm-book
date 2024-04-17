@@ -1,0 +1,39 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Emscripten:Canvas</title>
+  </head>
+  <body>
+    <canvas id="myCanvas"></canvas>
+    <script>
+    Module = {};
+    Module.onRuntimeInitialized = function() {
+      var canvas = document.getElementById('myCanvas');
+      canvas.width = 400;
+      canvas.height = 400;
+      window.requestAnimationFrame(update);
+    }
+
+    var radii = 0, delta = 1;
+    function update() {
+      var buf_addr = Module._get_img_buf(400, 400);
+      Module._draw_circle(200, 200, radii);
+      radii += delta;
+      if (radii > 200 || radii < 0) delta = -delta;      
+
+      var u8o = new Uint8ClampedArray(Module.HEAPU8.subarray(buf_addr,
+        buf_addr + 400 * 400 * 4));
+      var imgData = new ImageData(u8o, 400, 400);
+
+      var canvas = document.getElementById('myCanvas');
+      var ctx = canvas.getContext('2d');
+      ctx.putImageData(imgData, 0, 0);
+
+      window.requestAnimationFrame(update);
+    }
+    </script>
+    <script src="canvas.js"></script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+# 版权 @2020 柴树杉。
+
+[package]
+name = "hello-c-v3"
+version = "0.1.0"
+authors = ["chai2010 <chaishushan@gmail.com>"]
+edition = "2018"
+
+[dependencies]

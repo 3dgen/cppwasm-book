@@ -1,0 +1,17 @@
+<!doctype html>
+
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>Emscripten:int64 issue</title>
+  </head>
+  <body>
+	<script>
+	Module = {};
+	Module.onRuntimeInitialized = function() {
+		console.log(Module._i64_add(0xFFFFFFFE,0x7FFFFFFF, 1, 0));
+	}
+	</script>
+	<script src="int64_exp.js"></script>
+  </body>
+</html>

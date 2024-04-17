@@ -1,0 +1,7 @@
+[package]
+name = "hello_rust_wasi"
+version = "0.1.0"
+
+[dependencies]
+wasmer-runtime = "0.13.1"
+wasmer-wasi = "0.13.1"

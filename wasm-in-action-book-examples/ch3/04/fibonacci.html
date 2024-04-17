@@ -1,0 +1,25 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Emscripten:Fibonacci</title>
+  </head>
+  <body>
+    <script>
+    Module = {};
+    Module.onRuntimeInitialized = function() {
+      var ptr = Module._fibonacci(10);
+      if (ptr == 0) return;
+      var str = '';
+      for (var i = 0; i < 10; i++){
+        str += Module.HEAP32[(ptr >> 2) + i];
+        str += ' ';
+      }
+      console.log(str);
+      Module._free_buf(ptr);
+    }
+    </script>
+    <script src="fibonacci.js"></script>
+  </body>
+</html>

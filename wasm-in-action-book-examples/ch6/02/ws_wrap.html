@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>Emscripten:ws_wrap</title>
+  </head>
+  <body>
+	<script>
+
+	var g_NextWSID = 1;
+	var g_WSTable = [];	
+	function JS_WSNew(url, cb) {
+		var ws = new WebSocket(url);
+		ws.onopen = function (e) { Module._WSOnOpen(cb); };
+		ws.onclose = function (e) { Module._WSOnClose(cb); };
+		ws.onmessage = function (e) {
+			Module.ccall('WSOnMessage', 'null', ['number', 'string'], [cb, e.data]);
+		};
+		ws.onerror = function (e) { Module._WSOnError(cb); };
+	
+		var wsid = g_NextWSID++;
+		g_WSTable[wsid] = ws;
+		return wsid;
+	}
+	
+	function JS_WSSend(ws, data) {
+		var ws = g_WSTable[ws];
+		ws.send(data);
+	}
+	
+	function JS_WSDelete(ws) {
+		var ws = g_WSTable[ws];
+		ws.close();
+	}
+
+	</script>
+	<script src="ws_wrap.js"></script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!doctype html>
+
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>Emscripten:fps</title>
+  </head>
+  <body>
+	<script>
+	function step_run() {
+		Module._step();
+		window.requestAnimationFrame(step_run);
+	}
+	Module = {};
+	Module.onRuntimeInitialized = function() {
+		window.requestAnimationFrame(step_run);
+	}
+	</script>
+	<script src="fps.js"></script>
+  </body>
+</html>

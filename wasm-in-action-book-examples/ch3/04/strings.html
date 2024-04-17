@@ -1,0 +1,24 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Emscripten:JS alloc mem</title>
+  </head>
+  <body>
+    <script>
+    Module = {};
+    Module.onRuntimeInitialized = function() {
+      var ptr = Module._get_string();
+      var str = Pointer_stringify(ptr);
+      console.log(typeof(str));
+      console.log(str);
+      
+      ptr = allocateUTF8("你好，Emscripten！");
+      Module._print_string(ptr);
+      _free(ptr);
+    }
+    </script>
+    <script src="strings.js"></script>
+  </body>
+</html>
